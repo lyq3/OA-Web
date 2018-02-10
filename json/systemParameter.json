@@ -1,0 +1,14 @@
+{
+	"cmsName": "Demo",
+	"version": "v2.0",
+	"author": "卡卢比",
+	"homePage": "index.html",
+	"server": "windows",
+	"dataBase": "localhost",
+	"maxUpload": "2M",
+	"userRights": "超级管理员",
+	"description": "纯静态页面，不包含数据库",
+	"powerby": "copyright @2017 卡卢比",
+	"record": "蜀ICP备17002589号",
+	"keywords": "卡卢比"
+}
