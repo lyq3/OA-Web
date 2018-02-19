@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>新建公文</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="../../layui/css/layui.css" media="all" />
+    <link rel="stylesheet" href="../../css/public.css" media="all" />
+    <style>
+        .top-btn {
+            /*margin-top: 10px;*/
+            margin-left: 10px;
+            /*float: right;*/
+        }
+    </style>
+</head>
+<body>
+<div class="layui-form" >
+    <div class="layui-row layui-col-space" style="margin-top: 10px">
+        <div class="layui-col-md3">
+            <button class="layui-btn layui-btn-normal layui-btn-sm top-btn">保存</button>
+            <button class="layui-btn top-btn layui-btn-sm">提交</button>
+            <a style="margin-left: 20px">当前步骤：拟稿</a>
+        </div>
+        <div class="layui-col-md3" >
+            <div class="layui-form-item">
+            <label class="layui-form-label">下一步：</label>
+                <div class="layui-input-block">
+            <select name="city" lay-verify="required" >
+                <option value=""></option>
+                <option value="0">核稿</option>
+                <option value="1">审核</option>
+                <option value="2">会签</option>
+                <option value="3">签发</option>
+                <option value="4">复核登记</option>
+                <option value="5">整理排版</option>
+                <option value="6">校对</option>
+                <option value="7">用印</option>
+                <option value="8">分发</option>
+                <option value="9">待归档</option>
+            </select>
+                </div>
+            </div>
+        </div>
+        <div class="layui-col-md4">
+            1/3
+        </div>
+    </div>
+</div>
+
+
+    <hr class="layui-bg-blue" style="margin-top: 0">
+</body>
+<script type="text/javascript" src="../../layui/layui.js"></script>
+<script type="text/javascript" src="../../js/main.js"></script>

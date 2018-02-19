@@ -76,7 +76,7 @@
 				{
 					"title": "新建公文",
 					"icon": "&#xe61c;",
-					"href": "page/user/userGrade.html",
+					"href": "page/documentManage/newDocument.html",
 					"spread": false
 				},
 				{
