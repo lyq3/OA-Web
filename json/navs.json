@@ -36,16 +36,62 @@
 	],
 	"memberCenter": [
 		{
-			"title": "用户中心",
+			"title": "公文办理",
 			"icon": "&#xe612;",
 			"href": "page/user/userList.html",
-			"spread": false
+			"spread": false,
+			"children": [
+				{
+					"title": "待办公文",
+					"icon": "&#xe61c;",
+					"href": "page/user/userList.html",
+					"spread": false
+				},
+				{
+					"title": "已办公文",
+					"icon": "&#xe61c;",
+					"href": "page/user/userList.html",
+					"spread": false
+				},
+				{
+					"title": "待阅公文",
+					"icon": "&#xe61c;",
+					"href": "page/404.html",
+					"spread": false
+				},
+				{
+					"title": "待办待填公文",
+					"icon": "&#xe61c;",
+					"href": "page/404.html",
+					"spread": false
+				}
+			]
 		},
 		{
-			"title": "会员等级",
+			"title": "公文起草",
 			"icon": "icon-vip",
 			"href": "page/user/userGrade.html",
-			"spread": false
+			"spread": false,
+			"children": [
+				{
+					"title": "新建公文",
+					"icon": "&#xe61c;",
+					"href": "page/user/userGrade.html",
+					"spread": false
+				},
+				{
+					"title": "事务类通知",
+					"icon": "&#xe61c;",
+					"href": "page/user/userGrade.html",
+					"spread": false
+				},
+				{
+					"title": "快速发文",
+					"icon": "&#xe61c;",
+					"href": "page/404.html",
+					"spread": false
+				}
+			]
 		}
 	],
 	"systemeSttings": [

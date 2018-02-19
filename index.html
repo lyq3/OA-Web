@@ -49,33 +49,33 @@
 			    <ul class="layui-nav top_menu">
 					<!--业务功能菜单-->
 					<li id="as" class="layui-nav-item get_menu" pc data-menu="contentManagement">
-						<a href="javascript:;" class=""><cite>办公门户</cite></a>
+						<a href="javascript:;" class=""><cite data-locale="bangongmenhu">办公门户</cite></a>
 					</li>
 					<li class="layui-nav-item get_menu" pc data-menu="memberCenter">
-						<a href="javascript:;" class=""><cite>公文管理</cite></a>
+						<a href="javascript:;" class=""><cite data-locale="gongwenguanli">公文管理</cite></a>
 					</li>
 					<li class="layui-nav-item get_menu" pc  data-menu="systemeSttings">
-						<a href="javascript:;" class=""><cite>公共信息</cite></a>
+						<a href="javascript:;" class=""><cite data-locale="gonggongxinxi">公共信息</cite></a>
 					</li>
 					<li class="layui-nav-item get_menu" pc data-menu="seraphApi">
-						<a href="javascript:;" class=""><cite>行政办公</cite></a>
+						<a href="javascript:;" class=""><cite data-locale="xingzhengbangong">行政办公</cite></a>
 					</li>
 					<li class="layui-nav-item get_menu" pc data-menu="seraphApi">
-						<a href="javascript:;" class=""><cite>督查督办</cite></a>
+						<a href="javascript:;" class=""><cite data-locale="duchaduban">督查督办</cite></a>
 					</li>
 					<li class="layui-nav-item get_menu" pc data-menu="seraphApi">
-						<a href="javascript:;" class="" ><cite>个人办公</cite></a>
+						<a href="javascript:;" class="" ><cite data-locale="gerenbangong">个人办公</cite></a>
 					</li>
 					<li class="layui-nav-item get_menu" pc data-menu="seraphApi">
-						<a href="javascript:;" class=""><cite>内部论坛</cite></a>
+						<a href="javascript:;" class=""><cite data-locale="neibuluntan">内部论坛</cite></a>
 					</li>
 					<li class="layui-nav-item get_menu" pc data-menu="seraphApi">
-						<a href="javascript:;" class=""><cite>系统管理</cite></a>
+						<a href="javascript:;" class=""><cite data-locale="xitongguanli">系统管理</cite></a>
 					</li>
 					<!--系统功能菜单-->
-					<li class="layui-nav-item lockcms" pc>
-						<a href="javascript:;"><i class="seraph icon-lock"></i><cite>锁屏</cite></a>
-					</li>
+					<!--<li class="layui-nav-item lockcms" pc>-->
+						<!--<a href="javascript:;"><i class="seraph icon-lock"></i><cite data-locale="suoping">锁屏</cite></a>-->
+					<!--</li>-->
 					<li class="layui-nav-item" id="userInfo">
 						<a href="javascript:;"><img src="images/face.jpg" class="layui-nav-img userAvatar" width="35" height="35"><cite class="adminName">卡卢比</cite></a>
 						<dl class="layui-nav-child">
@@ -83,7 +83,7 @@
 							<dd><a href="javascript:;" data-url="page/user/changePwd.html"><i class="seraph icon-xiugai" data-icon="icon-xiugai"></i><cite>修改密码</cite></a></dd>
 							<dd><a href="javascript:;" class="showNotice"><i class="layui-icon">&#xe645;</i><cite>系统公告</cite><span class="layui-badge-dot"></span></a></dd>
 							<dd pc><a href="javascript:;" class="functionSetting"><i class="layui-icon">&#xe620;</i><cite>功能设定</cite><span class="layui-badge-dot"></span></a></dd>
-							<dd pc><a href="javascript:;" class="clearCache"><i class="layui-icon" data-icon="&#xe640;">&#xe640;</i><cite>清除缓存</cite><span class="layui-badge-dot"></span></a></dd>
+							<!--<dd pc><a href="javascript:;" class="clearCache"><i class="layui-icon" data-icon="&#xe640;">&#xe640;</i><cite>清除缓存</cite><span class="layui-badge-dot"></span></a></dd>-->
 							<dd pc><a href="javascript:;" class="changeSkin"><i class="layui-icon">&#xe61b;</i><cite>更换皮肤</cite></a></dd>
 							<dd><a href="page/login/login.html" class="signOut"><i class="seraph icon-tuichu"></i><cite>退出</cite></a></dd>
 						</dl>
@@ -141,6 +141,24 @@
 		<div class="layui-footer footer">
 			<!-- 显示/隐藏菜单 -->
 			<a href="javascript:;" class="seraph hideMenu icon-caidan"></a>
+			<!--锁屏-->
+			<li class="layui-nav-item lockcms" pc style="float: right;margin-right: 30px">
+				<a href="javascript:;"><i class="seraph icon-lock" style="color: red;"></i> <cite data-locale="suoping" style="color: #3A97C3">锁屏</cite></a>
+			</li>
+			<!--清除缓存-->
+			<dd pc style="float: right;margin-right: 20px">
+				<a href="javascript:;" class="clearCache">
+					<i class="layui-icon" style="color: red;" data-icon="&#xe640;">&#xe640;</i>
+					<cite style="color: #3A97C3">清除缓存</cite>
+					<!--<span class="layui-badge-dot"></span>-->
+				</a>
+			</dd>
+			<!--语言切换-->
+			<a id="change_language" style="float: right;margin-right: 20px;cursor:pointer;">
+				<span style="color: #1E9FFF">中文</span> /
+				<span style="color: #5FB878">तिब्बती</span>
+			</a>
+			<!--版权-->
 			<p><span>copyright @2018 卡卢比</span>　<span>| 技术支持单位：地牯牛科技</span>
 
 				<span> | 联系电话：13888888888</span>
@@ -151,13 +169,16 @@
 
 		</div>
 	</div>
-
 	<!-- 移动导航 -->
 	<div class="site-tree-mobile"><i class="layui-icon">&#xe602;</i></div>
 	<div class="site-mobile-shade"></div>
-
+	<script type="text/javascript" src="https://cdn.bootcss.com/jquery/1.9.1/jquery.min.js"></script>
+	<script type="text/javascript" src="plug/jquery.cookie.js"></script>
 	<script type="text/javascript" src="layui/layui.js"></script>
+	<script type="text/javascript" src="i18n/jquery.i18n.properties.min.js"></script>
 	<script type="text/javascript" src="js/index.js"></script>
 	<script type="text/javascript" src="js/cache.js"></script>
+	<script type="text/javascript" src="i18n/language.js"></script>
+
 </body>
 </html>

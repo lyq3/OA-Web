@@ -21,19 +21,7 @@
 			<div class="layui-col-md3">
 				<div class="layui-collapse">
 				<div class="layui-colla-item">
-					<h2 class="layui-colla-title">我的会议 <i class="layui-icon layui-red">&#xe756;</i>
-						<!--<div class="layui-btn-group" style="float: right" >-->
-							<!--<button class="layui-btn layui-btn-primary layui-btn-sm" onclick="return false;">-->
-								<!--<i class="layui-icon">&#x1002;</i>-->
-							<!--</button>-->
-							<!--<button class="layui-btn layui-btn-primary layui-btn-sm">-->
-								<!--<i class="layui-icon">&#xe620;</i>-->
-							<!--</button>-->
-							<!--<button class="layui-btn layui-btn-primary layui-btn-sm">-->
-								<!--<i class="layui-icon">&#x1006;</i>-->
-							<!--</button>-->
-						<!--</div>-->
-					</h2>
+					<h2 class="layui-colla-title">我的会议 <i class="layui-icon layui-red">&#xe756;</i></h2>
 					<div class="layui-colla-content layui-show">
 						<ul class="layui-timeline">
 							<li class="layui-timeline-item">
@@ -99,14 +87,77 @@
 			<div class="layui-col-md6">
 				<div class="layui-collapse">
 				<div class="layui-colla-item">
-					<h2 class="layui-colla-title">待办事项 <i class="layui-icon layui-red">&#xe756;</i></h2>
-					<div class="layui-colla-content layui-show">内容区域</div>
+					<h2 class="layui-colla-title">待办统计 <i class="layui-icon layui-red">&#xe756;</i></h2>
+					<div class="layui-colla-content layui-show">
+						<div class="layui-row layui-col-space20">
+							<div class="layui-col-md3">
+								<button class="layui-btn" style="height: 60px;background-color: #fff;color: #1AA094;border: 1px solid #1AA094">
+									待拟稿公文
+									<span class="layui-badge" >6</span>
+								</button>
+							</div>
+							<div class="layui-col-md3">
+								<button class="layui-btn" style="height: 60px;background-color: #fff;color: #1AA094;border: 1px solid #1AA094">
+									待拟稿公文
+									<span class="layui-badge">6</span>
+								</button>
+							</div>
+							<div class="layui-col-md3">
+								<button class="layui-btn" style="height: 60px;background-color: #fff;color: #1AA094;border: 1px solid #1AA094">
+									待拟稿公文
+									<span class="layui-badge">6</span>
+								</button>
+							</div>
+							<div class="layui-col-md3">
+								<button class="layui-btn" style="height: 60px;background-color: #fff;color: #1AA094;border: 1px solid #1AA094">
+									待拟稿公文
+									<span class="layui-badge">6</span>
+								</button>
+							</div>
+						</div>
+						<div class="layui-row layui-col-space20">
+							<div class="layui-col-md3">
+								<button class="layui-btn" style="height: 60px;background-color: #fff;color: #1AA094;border: 1px solid #1AA094">
+									待拟稿公文
+									<span class="layui-badge">6</span>
+								</button>
+							</div>
+							<div class="layui-col-md3">
+								<button class="layui-btn" style="height: 60px;background-color: #fff;color: #1AA094;border: 1px solid #1AA094">
+									待拟稿公文
+									<span class="layui-badge">6</span>
+								</button>
+							</div>
+							<div class="layui-col-md3">
+								<button class="layui-btn" style="height: 60px;background-color: #fff;color: #1AA094;border: 1px solid #1AA094">
+									待拟稿公文
+									<span class="layui-badge">6</span>
+								</button>
+							</div>
+							<div class="layui-col-md3">
+								<button class="layui-btn" style="height: 60px;background-color: #fff;color: #1AA094;border: 1px solid #1AA094">
+									待拟稿公文
+									<span class="layui-badge">6</span>
+								</button>
+							</div>
+						</div>
+					</div>
 				</div>
 				</div>
 				<div class="layui-collapse">
 				<div class="layui-colla-item">
 					<h2 class="layui-colla-title">图片新闻 <i class="layui-icon layui-red">&#xe756;</i></h2>
-					<div class="layui-colla-content layui-show">内容区域</div>
+					<div class="layui-colla-content layui-show" style="padding: 0">
+						<div class="layui-carousel" id="test1">
+							<div carousel-item>
+								<div>图片新闻1</div>
+								<div>图片新闻2</div>
+								<div>图片新闻3</div>
+								<div>图片新闻4</div>
+								<div>图片新闻5</div>
+							</div>
+						</div>
+					</div>
 				</div>
 				</div>
 			</div>
@@ -141,7 +192,7 @@
 			</div>
 			<div class="layui-collapse">
 				<div class="layui-colla-item">
-					<h2 class="layui-colla-title">代办事务 <i class="layui-icon layui-red">&#xe756;</i></h2>
+					<h2 class="layui-colla-title">待办事务 <i class="layui-icon layui-red">&#xe756;</i></h2>
 					<div class="layui-colla-content layui-show">内容区域</div>
 				</div>
 			</div>
@@ -153,7 +204,10 @@
 			</div>
 		</div>
 	</div>
-
+	<!--[if lt IE 9]>
+	<script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+	<script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+	<![endif]-->
 	<script type="text/javascript" src="../layui/layui.js"></script>
 	<script type="text/javascript" src="../js/main.js"></script>
 </body>
