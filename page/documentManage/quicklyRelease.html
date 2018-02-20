@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>快速发文</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="../../layui/css/layui.css" media="all" />
+    <link rel="stylesheet" href="../../css/public.css" media="all" />
+    <style>
+        .top-btn {
+            /*margin-top: 10px;*/
+            margin-left: 10px;
+            /*float: right;*/
+        }
+    </style>
+</head>
+<body style="overflow-x: hidden">
+<div class="layui-form layui-form-pane" >
+    <div class="layui-row layui-col-space20" style="margin-top: 10px">
+        <div style="float: right;margin-right: 20px">
+            <button class="layui-btn layui-btn-normal top-btn">保存</button>
+            <button class="layui-btn top-btn">提交</button>
+        </div>
+        <div class="layui-col-md4" >
+            <div class="layui-form-item">
+                <label class="layui-form-label" >公文模板</label>
+                <div class="layui-input-block">
+                    <select name="city" lay-verify="required" >
+                        <option value=""></option>
+                        <option value="0">核稿</option>
+                        <option value="1">审核</option>
+                        <option value="2">会签</option>
+                        <option value="3">签发</option>
+                        <option value="4">复核登记</option>
+                        <option value="5">整理排版</option>
+                        <option value="6">校对</option>
+                        <option value="7">用印</option>
+                        <option value="8">分发</option>
+                        <option value="9">待归档</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="layui-col-md4">
+            <div class="layui-form-item">
+                <label class="layui-form-label" >版记模板</label>
+                <div class="layui-input-block">
+                    <select name="city" lay-verify="required" >
+                        <option value="0">版记模板</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="layui-row layui-col-space20" style="margin-top: 10px">
+        <div class="layui-col-md4">
+            <div class="layui-form-item" >
+                <label class="layui-form-label" >分发对象</label>
+                <div class="layui-input-block">
+                    <!--<div style="border: 1px solid #E6E6E6;width: 100%"></div>-->
+                    <input type="text" name="title" required lay-verify="required" placeholder="单击选择发送人" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+        </div>
+        <div class="layui-col-md4">
+            <div class="layui-form-item ">
+                <label class="layui-form-label" >其他</label>
+                <div class="layui-input-block" style="border: 1px solid #E6E6E6">
+                    <input type="checkbox" name="" title="办理时限" lay-skin="primary" checked>
+                    <input type="checkbox" name="" title="短信提醒" lay-skin="primary">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<hr class="layui-bg-blue" style="margin-top: 0">
+
+<!--正文-->
+<div class="layui-form" style="margin: 0 100px">
+    <!--标题-->
+    <div >
+            <div class="layui-form-item">
+                <div class="layui-input-block">
+                    <select name="city" lay-verify="required" >
+                        <option value="0">版记模板</option>
+                    </select>
+                </div>
+            </div>
+    </div>
+    <!--文种-->
+    <div class="layui-row layui-col-space10">
+        <div class="layui-col-md4" >
+            <label class="layui-form-label" ><span style="color: red">* </span>文　种</label>
+            <div class="layui-input-block">
+                <select name="city" lay-verify="required" >
+                    <option value="0">版记模板</option>
+                </select>
+            </div>
+        </div>
+        <div class="layui-col-md4" >
+            <label class="layui-form-label" ><span style="color: red">* </span>发文字号</label>
+            <div class="layui-input-block">
+                <select name="city" lay-verify="required" >
+                    <option value="0">版记模板</option>
+                </select>
+            </div>
+        </div>
+        <div class="layui-col-md4" >
+            <label class="layui-form-label" >其他</label>
+            <div class="layui-input-block">
+                <select name="city" lay-verify="required" >
+                    <option value="0">版记模板</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <!--签发人-->
+    <div class="layui-row layui-col-space10">
+        <div class="layui-col-md4" >
+            <label class="layui-form-label" >签发人</label>
+            <div class="layui-input-block">
+                <input type="text" name="title" required lay-verify="required" value="管理员" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-col-md4" >
+            <label class="layui-form-label" ><span style="color: red">* </span>签发日期</label>
+            <div class="layui-input-block">
+                <input type="text" class="layui-input" id="qfrq">
+            </div>
+        </div>
+    </div>
+
+    <!--发文意见-->
+    <div class="layui-row layui-col-space10">
+        <div class="layui-col-md12" >
+            <label class="layui-form-label" >发文意见</label>
+            <div class="layui-input-block">
+                <textarea name="desc" placeholder="请输入发文意见" class="layui-textarea"></textarea>            </div>
+        </div>
+    </div>
+
+    <!--公文标题-->
+    <div class="layui-row layui-col-space10">
+            <div class="layui-col-md12" >
+                <label class="layui-form-label" ><span style="color: red">* </span>公文标题</label>
+                <div class="layui-input-block">
+                    <input type="text" name="title" required lay-verify="required" placeholder="输入公文标题" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+    </div>
+    <!--主送机关、抄送机关-->
+    <div class="layui-row layui-col-space10">
+        <div class="layui-col-md6" >
+            <label class="layui-form-label" >主送机关</label>
+            <div class="layui-input-block">
+                <input type="text" name="title" required lay-verify="required" placeholder="输入内容" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-col-md6" >
+            <label class="layui-form-label" >抄送机关</label>
+            <div class="layui-input-block">
+                <input type="text" name="title" required lay-verify="required" placeholder="输入内容" autocomplete="off" class="layui-input layui-inline">
+            </div>
+        </div>
+    </div>
+    <!--附注-->
+    <div class="layui-row layui-col-space10">
+        <div class="layui-col-md12" >
+            <label class="layui-form-label" >附注</label>
+            <div class="layui-input-block">
+                <input type="text" name="title" required lay-verify="required" placeholder="输入内容" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+    </div>
+
+    <!--紧急程度-->
+    <div class="layui-row layui-col-space10">
+        <div class="layui-col-md6" >
+            <label class="layui-form-label" >紧急程度</label>
+            <div class="layui-input-block">
+                <select name="city" lay-verify="required" >
+                    <option value="0">非急件</option>
+                    <option value="1">紧急</option>
+                    <option value="2">普通</option>
+                </select>
+            </div>
+        </div>
+        <div class="layui-col-md6" >
+            <label class="layui-form-label" >文件密级</label>
+            <div class="layui-input-block">
+                <input type="text" name="title" required lay-verify="required" value="无密级" autocomplete="off" class="layui-input layui-inline">
+            </div>
+        </div>
+    </div>
+
+    <!--拟稿人-->
+    <div class="layui-row layui-col-space10">
+        <div class="layui-col-md6" >
+            <label class="layui-form-label" >拟稿人</label>
+            <div class="layui-input-block">
+                <input type="text" name="title" required lay-verify="required" value="管理员" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-col-md6" >
+            <label class="layui-form-label" >拟稿部门</label>
+            <div class="layui-input-block">
+                <input type="text" name="title" required lay-verify="required" value="管理员" autocomplete="off" class="layui-input layui-inline">
+            </div>
+        </div>
+    </div>
+
+    <!--起草日期-->
+    <div class="layui-row layui-col-space10">
+        <div class="layui-col-md6" >
+            <label class="layui-form-label" ><span style="color: red">* </span>起草日期</label>
+            <div class="layui-input-block">
+                <input type="text" class="layui-input" id="qcrq">
+            </div>
+        </div>
+        <div class="layui-col-md6" >
+            <label class="layui-form-label" >纸　张</label>
+            <div class="layui-input-block">
+                <input type="radio" name="zz" value="1" title="A4">
+                <input type="radio" name="zz" value="2" title="16K" checked>
+            </div>
+        </div>
+    </div>
+
+    <!--印发日期-->
+    <div class="layui-row layui-col-space10">
+        <div class="layui-col-md6" >
+            <label class="layui-form-label" >文印 (份数)</label>
+            <div class="layui-input-block">
+                <input type="text" name="title" required lay-verify="required" value="0" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-col-md6" >
+            <label class="layui-form-label" >印发日期</label>
+            <div class="layui-input-block">
+                <input type="text" class="layui-input" id="yfrq">
+            </div>
+        </div>
+    </div>
+
+    <!--公开属性-->
+    <div class="layui-row layui-col-space10">
+        <div class="layui-col-md10" >
+            <label class="layui-form-label" >公开属性</label>
+            <div class="layui-input-block">
+                <input type="radio" name="gksx" value="1" title="主动公开">
+                <input type="radio" name="gksx" value="2" title="依申请公开" checked>
+                <input type="radio" name="gksx" value="3" title="不予公开" checked>
+            </div>
+        </div>
+    </div>
+    <!--附件-->
+    <div class="layui-row layui-col-space10">
+        <div class="layui-col-md2" >
+            <label class="layui-form-label" >附件</label>
+            <div class="layui-input-block">
+                <button  type="button" class="layui-btn layui-btn-normal layui-btn-sm" id="sc">
+                    <i class="layui-icon">&#xe67c;</i>上传附件
+                </button>
+            </div>
+        </div>
+    </div>
+    <!--公文编辑区-->
+</div>
+</body>
+<!--[if lt IE 9]>
+<script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+<script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+<script type="text/javascript" src="../../layui/layui.js"></script>
+<script type="text/javascript" src="../../js/main.js"></script>
+<script>
+    layui.use(['laydate','upload'], function(){
+        var laydate = layui.laydate;
+        var upload = layui.upload;
+        //签发日期
+        laydate.render({
+            elem: '#qfrq', //指定元素
+            theme:'#1E9FFF'
+        });
+        //起草日期
+        laydate.render({
+            elem: '#qcrq', //指定元素
+            theme:'#1E9FFF'
+        });
+        //印发日期
+        laydate.render({
+            elem: '#yfrq', //指定元素
+            theme:'#1E9FFF'
+        });
+        //执行实例
+        var uploadInst = upload.render({
+            elem: '#sc' //绑定元素
+            ,url: '/upload/' //上传接口
+            ,done: function(res){
+                //上传完毕回调
+            }
+            ,error: function(){
+                //请求异常回调
+            }
+        });
+    });
+</script>
