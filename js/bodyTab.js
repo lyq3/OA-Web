@@ -33,7 +33,7 @@ layui.define(["element","jquery"],function(exports){
                 ulHtml += '<li class="layui-nav-item">';
             }
             if(data[i].children != undefined && data[i].children.length > 0){
-                ulHtml += '<a>';
+                ulHtml += '<a style="background-color: #6CB0D3">';
                 if(data[i].icon != undefined && data[i].icon != ''){
                     if(data[i].icon.indexOf("icon-") != -1){
                         ulHtml += '<i class="seraph '+data[i].icon+'" data-icon="'+data[i].icon+'"></i>';
@@ -47,9 +47,9 @@ layui.define(["element","jquery"],function(exports){
                 ulHtml += '<dl class="layui-nav-child">';
                 for(var j=0;j<data[i].children.length;j++){
                     if(data[i].children[j].target == "_blank"){
-                        ulHtml += '<dd><a data-url="'+data[i].children[j].href+'" target="'+data[i].children[j].target+'">';
+                        ulHtml += '<dd style="background-color: #6CB0D3"><a data-url="'+data[i].children[j].href+'" target="'+data[i].children[j].target+'">';
                     }else{
-                        ulHtml += '<dd><a data-url="'+data[i].children[j].href+'">';
+                        ulHtml += '<dd style="background-color: #6CB0D3"><a data-url="'+data[i].children[j].href+'">';
                     }
                     if(data[i].children[j].icon != undefined && data[i].children[j].icon != ''){
                         if(data[i].children[j].icon.indexOf("icon-") != -1){

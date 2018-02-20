@@ -7,34 +7,38 @@
 
     <!--CSS Reset-->
     <!--说明：根据使用要求，此处可选 reset.min.css 或 normalize.min.css-->
-    <link href="./dist/32b68832cb3498ff8a962a72dfc841c9.css" type="text/css" rel="stylesheet">
+    <link href="../dist/32b68832cb3498ff8a962a72dfc841c9.css" type="text/css" rel="stylesheet">
     <!--CSS Reset end-->
 
     <!-- CSS Easyui Of insdep theme-->
-    <link href="./dist/905b74e89dd0b474494b87f6ff7a143c.css" type="text/css" rel="stylesheet">
+    <link href="../dist/905b74e89dd0b474494b87f6ff7a143c.css" type="text/css" rel="stylesheet">
     <!-- CSS Easyui Of insdep theme end-->
 
     <!-- CSS 主题样式-->
-    <link href="./dist/bcd4190d7793e941e7c228144fc75277.css" type="text/css" rel="stylesheet">
+    <link href="../dist/bcd4190d7793e941e7c228144fc75277.css" type="text/css" rel="stylesheet">
     <!-- CSS 主题样式 end-->
 
     <!-- CSS Alibaba iconfont字体图标库-->
-    <link href="./dist/e78b57a008f836f9f290d734a310ee62.css" type="text/css" rel="stylesheet">
+    <link href="../dist/e78b57a008f836f9f290d734a310ee62.css" type="text/css" rel="stylesheet">
     <!-- CSS Alibaba iconfont字体图标库 end-->
 
-    <link type="text/css" href="./dist/51636cff577fbcf9ff42ecbb8f7b3353.css" rel="stylesheet">
+    <link type="text/css" href="../dist/51636cff577fbcf9ff42ecbb8f7b3353.css" rel="stylesheet">
 
-    <link type="text/css" href="./dist/b66fc9192760bff90066a7f725f8712d.css" rel="stylesheet">
+    <link type="text/css" href="../dist/b66fc9192760bff90066a7f725f8712d.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+    <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
 
-    <script type="text/javascript" src="./dist/fd128b0d1e8d264ba93d06b594e34ed1.js"></script>
+    <script type="text/javascript" src="../dist/fd128b0d1e8d264ba93d06b594e34ed1.js"></script>
 
 
     <!-- JavaScript 主题脚本-->
-    <script type="text/javascript" src="./dist/33dd847d1a204ab438146229b45c70eb.js"></script>
+    <script type="text/javascript" src="../dist/33dd847d1a204ab438146229b45c70eb.js"></script>
     <!-- JavaScript 主题脚本 end-->
 
 
-<script src="./dist/32b68832cb3498ff8a962a72dfc841c9.js"></script><script src="./dist/905b74e89dd0b474494b87f6ff7a143c.js"></script><script src="./dist/bcd4190d7793e941e7c228144fc75277.js"></script><script src="./dist/e78b57a008f836f9f290d734a310ee62.js"></script><script src="./dist/51636cff577fbcf9ff42ecbb8f7b3353.js"></script><script src="./dist/b66fc9192760bff90066a7f725f8712d.js"></script><link rel="stylesheet" href="./dist/fd128b0d1e8d264ba93d06b594e34ed1.css"><script src="./dist/ebc03068d4d81f6e8002601768f632e3.js"></script><script src="./dist/d620fc2c332e53b4affed07c02a7b30e.js"></script></head>
+<script src="../dist/32b68832cb3498ff8a962a72dfc841c9.js"></script><script src="../dist/905b74e89dd0b474494b87f6ff7a143c.js"></script><script src="../dist/bcd4190d7793e941e7c228144fc75277.js"></script><script src="../dist/e78b57a008f836f9f290d734a310ee62.js"></script><script src="../dist/51636cff577fbcf9ff42ecbb8f7b3353.js"></script><script src="../dist/b66fc9192760bff90066a7f725f8712d.js"></script><link rel="stylesheet" href="../dist/fd128b0d1e8d264ba93d06b594e34ed1.css"><script src="../dist/ebc03068d4d81f6e8002601768f632e3.js"></script><script src="../dist/d620fc2c332e53b4affed07c02a7b30e.js"></script></head>
 
 <body>
 <!--启动顶部加载进度条-->
@@ -76,7 +80,7 @@
     <!--</div>-->
 
     <!--&lt;!&ndash;导航&ndash;&gt;-->
-    <!--<a href="./main.html" class="easyui-linkbutton current">办公门户</a>-->
+    <!--<a href="./index.html" class="easyui-linkbutton current">办公门户</a>-->
     <!--<a href="./gwgl.html" class="easyui-linkbutton" >公文管理</a>-->
     <!--<a href="#" class="easyui-linkbutton" >公共信息</a>-->
     <!--<a href="#" class="easyui-linkbutton" >行政办公<span class="badge color-red">15</span></a>-->
@@ -208,10 +212,10 @@
 
                     </div>
                     <div data-options="region:'center',border:false" style="width:25%;padding:10px 20px 20px 10px; background: #ececec; overflow: hidden">
-
-                        <link href="./dist/ebc03068d4d81f6e8002601768f632e3.css" type="text/css" rel="stylesheet">
+                        <!--待办统计-->
+                        <link href="../dist/ebc03068d4d81f6e8002601768f632e3.css" type="text/css" rel="stylesheet">
                         <div class="target" id="target5">
-                            <div style="position: static" class="statistic_standard_panel statistic_standard_block easyui-draggable">
+                            <div id="draggable5" style="position: static" class="statistic_standard_panel statistic_standard_block easyui-draggable">
                                 <ul>
                                     <li style="width: calc(24% - 12px);"><i class="iconfont color-red">&#xe62f;</i><span>我的会议</span><b>1</b></li>
                                     <li style="width: calc(24% - 12px);"><i class="iconfont color-orange">&#xe688;</i><span>我的行程</span><b>1</b></li>
@@ -228,9 +232,9 @@
                         </div>
 
                         <!--留言互动面板-->
-                        <link href="./dist/d620fc2c332e53b4affed07c02a7b30e.css" type="text/css" rel="stylesheet">
-                        <div class="target" id="target10">
-                            <div style="position: static" class="easyui-draggable">
+                        <link href="../dist/d620fc2c332e53b4affed07c02a7b30e.css" type="text/css" rel="stylesheet">
+                        <div class="target" id="target6">
+                            <div id="draggable6" style="position: static" class="easyui-draggable">
                                 <div class="comment">
                                     <div class="comment_rows">
 
@@ -259,13 +263,13 @@
                                         </div>
                                         <div class="comment_images">
                                             <ul>
-                                                <li><img style="height: 200px;width: 300px" src="./dist/b5c9632f3c50b932c9a9c85f591648e4.jpg"></li>
+                                                <li><img style="height: 200px;width: 300px" src="../dist/b5c9632f3c50b932c9a9c85f591648e4.jpg"></li>
                                             </ul>
                                         </div>
 
                                         <div class="comment_publisher">
                                             <div class="left">
-                                                <img src="./dist/e479bd1f7c9f36ddc5786203dd64b532.png">
+                                                <img src="../dist/e479bd1f7c9f36ddc5786203dd64b532.png">
                                                 <dl>
                                                     <dt>扎西罗布</dt>
                                                     <dd>超级管理员</dd>
@@ -327,8 +331,8 @@
                     </div>
                     <div data-options="region:'east',border:false" style="overflow:hidden;width:25%;padding:10px 20px 20px 10px; background: #ececec;">
                         <!--我的会议-->
-                        <div class="target" id="target6">
-                            <div style="position: static" class="easyui-draggable">
+                        <div class="target" id="target7">
+                            <div id="draggable7" style="position: static" class="easyui-draggable">
                                 <div class="easyui-panel " title="我的会议" style="height:200px;padding:10px;" data-options="iconCls:'icon-save',closable:true,collapsible:true,minimizable:true,maximizable:true">
                                     <i class="iconfont color-red" style="font-size: 24px">&#xe62f;</i>
                                     <p style="font-size:14px">
@@ -341,8 +345,8 @@
                             </div>
                         </div>
                         <!--信息管理-->
-                        <div class="target" id="target7">
-                            <div style="position: static" class="easyui-draggable">
+                        <div class="target" id="target8">
+                            <div id="draggable8" style="position: static" class="easyui-draggable">
                                 <div class="easyui-panel  panel-bar-green" title="信息管理" style="height:200px;padding:10px;" data-options="iconCls:'icon-save',closable:true,collapsible:true,minimizable:true,maximizable:true">
                                     <i class="iconfont color-olive" style="font-size:24px">&#xe6c1;</i>
                                     <p style="font-size:14px">
@@ -384,8 +388,8 @@
                             </div>
                         </div>
                         <!--工作状态-->
-                        <div class="target" id="target8">
-                            <div style="position: static" class="easyui-draggable">
+                        <div class="target" id="target9">
+                            <div id="draggable9" style="position: static" class="easyui-draggable">
                                 <div class="easyui-panel " title="工作状态" style="height:200px;padding:10px;" data-options="iconCls:'icon-save',closable:true,collapsible:true,minimizable:true,maximizable:true">
                                     <i class="iconfont color-yellow" style="font-size: 24px">&#xe602;</i>
                                     <p style="font-size:14px">
@@ -398,8 +402,8 @@
                             </div>
                         </div>
                         <!--今日行程-->
-                        <div class="target" id="target9">
-                            <div style="position: static" class="easyui-draggable">
+                        <div class="target" id="target10">
+                            <div id="draggable10" style="position: static" class="easyui-draggable">
                                 <div class="easyui-panel " title="今日行程" style="height:200px;padding:10px;" data-options="iconCls:'icon-save',closable:true,collapsible:true,minimizable:true,maximizable:true">
                                     <i class="iconfont color-orange" style="font-size: 24px">&#xe688;</i>
                                    <br>
@@ -426,19 +430,15 @@
                         <a href="javascript:void(0)" class="easyui-linkbutton" onclick="$('#w').window('open')">确定</a>
                         <a href="javascript:void(0)" class="easyui-linkbutton" onclick="$('#w').window('close')">取消</a>
                     </div>
-                    <div id="w" class="easyui-window" title="选择模块" data-options="iconCls:'icon-save'" style="width:500px;height:500px;padding:5px;">
+                    <div id="w" class="easyui-window" title="选择模块" data-options="iconCls:'icon-save'" style="width:500px;height:500px;padding:5px;display:none">
 
                         <div class="easyui-layout" data-options="fit:true">
                             <div data-options="region:'center'" style="padding:10px;">
-                                <div style="margin:10px 0;">
-                                    <a href="#" id="y" class="easyui-linkbutton">获取单选数据</a>
-                                    <a href="#" class="easyui-linkbutton">获取多选数据</a>
-                                </div>
-                                <div id="data" class="easyui-datalist" title="模块列表" style="width:100%;height:100%">
+                                <div id="menulist" class="easyui-datalist" title="模块列表" style="width:100%;height:100%">
                                 </div>
                             </div>
                             <div data-options="region:'south',border:false" style="text-align:right;padding:5px 0 0;">
-                                <a class="easyui-linkbutton" data-options="iconCls:'icon-ok'" href="javascript:void(0)" onclick="javascript:alert('ok')" style="width:80px">确定</a>
+                                <a id="changeModel" class="easyui-linkbutton" data-options="iconCls:'icon-ok'" href="javascript:void(0)" style="width:80px">确定</a>
                                 <a class="easyui-linkbutton" data-options="iconCls:'icon-cancel'" href="javascript:void(0)" onclick="javascript:alert('cancel')" style="width:80px">取消</a>
                             </div>
                         </div>
