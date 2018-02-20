@@ -284,7 +284,9 @@
 <script type="text/javascript" src="../../plug/ueditor1.4.3/ueditor.all.js"></script>
 <!-- 实例化编辑器 -->
 <script type="text/javascript">
-    var ue = UE.getEditor('container');
+    var ue = UE.getEditor('container',{
+        initialFrameHeight : 400
+    });
 </script>
 </body>
 <!--[if lt IE 9]>
