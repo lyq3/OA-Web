@@ -20,12 +20,16 @@
     </style>
 </head>
 <body style="overflow-x: hidden">
+<!--保存按钮-->
+<div style="float: right;margin-right: 20px;position:fixed;right: 20px;top: 50px;z-index: 9999">
+    <button class="layui-btn layui-btn-normal top-btn">保存</button>
+    <button class="layui-btn top-btn">提交</button>
+</div>
+<!--<div style="margin-left: 20px">模板选择<hr style="margin: 0" class="layui-bg-blue"></div>-->
+<blockquote class="layui-elem-quote" style="margin-left: 20px;line-height: 10px;margin-top: 5px">模板选择</blockquote>
+
 <div class="layui-form layui-form-pane" >
-    <div class="layui-row layui-col-space20" style="margin-top: 10px">
-        <div style="float: right;margin-right: 20px">
-            <button class="layui-btn layui-btn-normal top-btn">保存</button>
-            <button class="layui-btn top-btn">提交</button>
-        </div>
+    <div class="layui-row layui-col-space20" style="margin-top: 5px;margin-left: 20px">
         <div class="layui-col-md4" >
             <div class="layui-form-item">
                 <label class="layui-form-label" >公文模板</label>
@@ -57,7 +61,7 @@
             </div>
         </div>
     </div>
-    <div class="layui-row layui-col-space20" style="margin-top: 10px">
+    <div class="layui-row layui-col-space20" style="margin-top: 5px;margin-left: 20px">
         <div class="layui-col-md4">
             <div class="layui-form-item" >
                 <label class="layui-form-label" >分发对象</label>
@@ -80,7 +84,8 @@
 </div>
 
 
-<hr class="layui-bg-blue" style="margin-top: 0">
+<blockquote class="layui-elem-quote" style="margin-left: 20px;line-height: 10px">条件填写</blockquote>
+
 
 <!--正文-->
 <div class="layui-form" style="margin: 0 100px">
@@ -272,8 +277,20 @@
             </div>
         </div>
     </div>
-    <!--公文编辑区-->
+
 </div>
+<!--公文编辑区-->
+<!-- 加载编辑器的容器 -->
+<blockquote class="layui-elem-quote" style="margin-left: 20px;line-height: 10px;margin-bottom: 0">公文编辑</blockquote>
+<div id="container" name="content" style="margin: 0 20px 20px 20px">　</div>
+<!-- 配置文件 -->
+<script type="text/javascript" src="../../plug/ueditor1.4.3/ueditor.config.js"></script>
+<!-- 编辑器源码文件 -->
+<script type="text/javascript" src="../../plug/ueditor1.4.3/ueditor.all.js"></script>
+<!-- 实例化编辑器 -->
+<script type="text/javascript">
+    var ue = UE.getEditor('container');
+</script>
 </body>
 <!--[if lt IE 9]>
 <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
@@ -282,9 +299,20 @@
 <script type="text/javascript" src="../../layui/layui.js"></script>
 <script type="text/javascript" src="../../js/main.js"></script>
 <script>
-    layui.use(['laydate','upload'], function(){
+    layui.use(['laydate','upload','util'], function(){
         var laydate = layui.laydate;
         var upload = layui.upload;
+        var util = layui.util;
+        //执行
+        util.fixbar({
+            bar1: false
+            ,click: function(type){
+                console.log(type);
+                if(type === 'bar1'){
+                    alert('点击了bar1')
+                }
+            }
+        });
         //签发日期
         laydate.render({
             elem: '#qfrq', //指定元素
