@@ -51,6 +51,13 @@ layui.use(['bodyTab','form','element','layer'],function(){
 	});
 
     $(".top_menu .get_menu").click(function(){
+    	//判断是否展开侧边栏
+    	var menu = $(this).find("cite").attr("closeMenu");
+    	if(menu){//首页则关闭
+            $(".layui-layout-admin").addClass("showMenu");
+		} else {//其他页面则展开
+            $(".layui-layout-admin").removeClass("showMenu");
+        }
         getData($(this).data("menu"));
 	})
 
