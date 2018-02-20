@@ -83,9 +83,12 @@
 
 
 <!--正文-->
-<div class="layui-form" style="margin: 0 100px">
+<div class="layui-form" style="margin: 0 100px;padding-right:5px;border-left: 1px solid silver;border-right: 1px solid silver">
     <!--标题-->
-    <div >
+    <div class="layui-row layui-col-space10">
+        <div class="layui-col-md2" ></div>
+        <div class="layui-col-md6" >
+        <div >
             <div class="layui-form-item">
                 <div class="layui-input-block">
                     <select name="city" lay-verify="required" >
@@ -93,6 +96,9 @@
                     </select>
                 </div>
             </div>
+        </div>
+        </div>
+        <!--<div class="layui-col-md4" ></div>-->
     </div>
     <!--文种-->
     <div class="layui-row layui-col-space10">
@@ -287,6 +293,17 @@
     var ue = UE.getEditor('container',{
         initialFrameHeight : 400
     });
+    ue.ready(function() {
+        ue.setContent('<h2 style="font-size: 32px; font-weight: bold; border-bottom: 2px solid red; padding: 0px 4px 50px 0px; text-align: center; margin: 0px 0px 20px;">\n' +
+            '    <span style="color: rgb(255, 0, 0); font-family: 宋体, SimSun;">&nbsp;<strong>拉&nbsp; 萨&nbsp; 市&nbsp; 城&nbsp; 关&nbsp; 区&nbsp; 政&nbsp; 府</strong></span>\n' +
+            '</h2>\n' +
+            '<p>\n' +
+            '    <span style="color: rgb(255, 0, 0); font-family: 宋体, SimSun;"><strong><br/></strong></span>\n' +
+            '</p>\n' +
+            '<p>\n' +
+            '    <br/>\n' +
+            '</p>');
+    });
 </script>
 </body>
 <!--[if lt IE 9]>
@@ -313,17 +330,20 @@
         //签发日期
         laydate.render({
             elem: '#qfrq', //指定元素
-            theme:'#1E9FFF'
+            theme:'#1E9FFF',
+            calendar: true
         });
         //起草日期
         laydate.render({
             elem: '#qcrq', //指定元素
-            theme:'#1E9FFF'
+            theme:'#1E9FFF',
+            calendar: true
         });
         //印发日期
         laydate.render({
             elem: '#yfrq', //指定元素
-            theme:'#1E9FFF'
+            theme:'#1E9FFF',
+            calendar: true
         });
         //执行实例
         var uploadInst = upload.render({
