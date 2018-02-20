@@ -1,214 +1,470 @@
-<!DOCTYPE html>
+
 <html>
 <head>
-	<meta charset="utf-8">
-	<title>首页</title>
-	<meta name="renderer" content="webkit">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	<meta name="apple-mobile-web-app-status-bar-style" content="black">
-	<meta name="apple-mobile-web-app-capable" content="yes">
-	<meta name="format-detection" content="telephone=no">
-	<link rel="stylesheet" href="../layui/css/layui.css" media="all" />
-	<link rel="stylesheet" href="../css/public.css" media="all" />
-</head>
-<body class="childrenBody">
-	<!--<blockquote class="layui-elem-quote layui-bg-blue">-->
-		<!--<div id="nowTime"></div>-->
-	<!--</blockquote>-->
-	<div  class="layui-row layui-col-space10">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="edge">
+    <title>首页</title>
 
-			<div class="layui-col-md3">
-				<div class="layui-collapse">
-				<div class="layui-colla-item">
-					<h2 class="layui-colla-title">我的会议 <i class="layui-icon layui-red">&#xe756;</i></h2>
-					<div class="layui-colla-content layui-show">
-						<ul class="layui-timeline">
-							<li class="layui-timeline-item">
-								<i class="layui-icon layui-timeline-axis">&#xe63f;</i>
-								<div class="layui-timeline-content layui-text">
-									<h3 class="layui-timeline-title">8月18日 2点</h3>
-									<p>
-										6楼会议室开会，商讨系统开发<i class="layui-icon"></i>
-									</p>
-								</div>
-							</li>
-							<li class="layui-timeline-item">
-								<i class="layui-icon layui-timeline-axis">&#xe63f;</i>
-								<div class="layui-timeline-content layui-text">
-									<h3 class="layui-timeline-title">8月16日 3点半</h3>
-									<p>
-										20楼会议室开会<i class="layui-icon"></i>
-									</p>
-									<ul>
-										<li>页面讨论</li>
-										<li>架构讨论</li>
-									</ul>
-								</div>
-							</li>
-							<li class="layui-timeline-item">
-								<i class="layui-icon layui-timeline-axis">&#xe63f;</i>
-								<div class="layui-timeline-content layui-text">
-									<h3 class="layui-timeline-title">1月1日 9点</h3>
-									<p>
-										年会
-									</p>
-								</div>
-							</li>
-							<li class="layui-timeline-item">
-								<i class="layui-icon layui-timeline-axis">&#xe63f;</i>
-								<div class="layui-timeline-content layui-text">
-									<div class="layui-timeline-title">过去</div>
-								</div>
-							</li>
-						</ul>
-					</div>
-				</div>
-				</div>
-				<div class="layui-collapse">
-					<div class="layui-colla-item">
-						<h2 class="layui-colla-title">信息管理 <i class="layui-icon layui-red">&#xe756;</i></h2>
-						<div class="layui-colla-content layui-show">内容区域</div>
-					</div>
-				</div>
-				<div class="layui-collapse">
-					<div class="layui-colla-item">
-						<h2 class="layui-colla-title">工作动态 <i class="layui-icon layui-red">&#xe756;</i></h2>
-						<div class="layui-colla-content layui-show">内容区域</div>
-					</div>
-				</div>
-				<div class="layui-collapse">
-					<div class="layui-colla-item">
-						<h2 class="layui-colla-title">我的日程 <i class="layui-icon layui-red">&#xe756;</i></h2>
-						<div class="layui-colla-content layui-show">内容区域</div>
-					</div>
-				</div>
-			</div>
-			<div class="layui-col-md6">
-				<div class="layui-collapse">
-				<div class="layui-colla-item">
-					<h2 class="layui-colla-title">待办统计 <i class="layui-icon layui-red">&#xe756;</i></h2>
-					<div class="layui-colla-content layui-show">
-						<div class="layui-row layui-col-space20">
-							<div class="layui-col-md3">
-								<button class="layui-btn" style="height: 60px;background-color: #fff;color: #1AA094;border: 1px solid #1AA094">
-									待拟稿公文
-									<span class="layui-badge" >6</span>
-								</button>
-							</div>
-							<div class="layui-col-md3">
-								<button class="layui-btn" style="height: 60px;background-color: #fff;color: #1AA094;border: 1px solid #1AA094">
-									待拟稿公文
-									<span class="layui-badge">6</span>
-								</button>
-							</div>
-							<div class="layui-col-md3">
-								<button class="layui-btn" style="height: 60px;background-color: #fff;color: #1AA094;border: 1px solid #1AA094">
-									待拟稿公文
-									<span class="layui-badge">6</span>
-								</button>
-							</div>
-							<div class="layui-col-md3">
-								<button class="layui-btn" style="height: 60px;background-color: #fff;color: #1AA094;border: 1px solid #1AA094">
-									待拟稿公文
-									<span class="layui-badge">6</span>
-								</button>
-							</div>
-						</div>
-						<div class="layui-row layui-col-space20">
-							<div class="layui-col-md3">
-								<button class="layui-btn" style="height: 60px;background-color: #fff;color: #1AA094;border: 1px solid #1AA094">
-									待拟稿公文
-									<span class="layui-badge">6</span>
-								</button>
-							</div>
-							<div class="layui-col-md3">
-								<button class="layui-btn" style="height: 60px;background-color: #fff;color: #1AA094;border: 1px solid #1AA094">
-									待拟稿公文
-									<span class="layui-badge">6</span>
-								</button>
-							</div>
-							<div class="layui-col-md3">
-								<button class="layui-btn" style="height: 60px;background-color: #fff;color: #1AA094;border: 1px solid #1AA094">
-									待拟稿公文
-									<span class="layui-badge">6</span>
-								</button>
-							</div>
-							<div class="layui-col-md3">
-								<button class="layui-btn" style="height: 60px;background-color: #fff;color: #1AA094;border: 1px solid #1AA094">
-									待拟稿公文
-									<span class="layui-badge">6</span>
-								</button>
-							</div>
-						</div>
-					</div>
-				</div>
-				</div>
-				<div class="layui-collapse">
-				<div class="layui-colla-item">
-					<h2 class="layui-colla-title">图片新闻 <i class="layui-icon layui-red">&#xe756;</i></h2>
-					<div class="layui-colla-content layui-show" style="padding: 0">
-						<div class="layui-carousel" id="test1">
-							<div carousel-item>
-								<div style="background-image: url('../images/userface.jpg')">图片新闻1</div>
-								<div style="background-image: url('../images/userface.jpg')">图片新闻2</div>
-								<div style="background-image: url('../images/userface.jpg')">图片新闻3</div>
-								<div style="background-image: url('../images/userface.jpg')">图片新闻4</div>
-								<div style="background-image: url('../images/userface.jpg')">图片新闻5</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				</div>
-			</div>
-		<div class="layui-col-md3">
-			<div class="layui-collapse">
-				<div class="layui-colla-item">
-					<h2 class="layui-colla-title">待阅新闻 <i class="layui-icon layui-red">&#xe756;</i></h2>
-					<div class="layui-colla-content layui-show">
-						<table class="layui-table mag0" lay-skin="line" style="border: 0">
-							<colgroup>
-								<col>
-								<col width="110">
-							</colgroup>
-							<tbody class="hot_news"></tbody>
-						</table>
-					</div>
-				</div>
-			</div>
-			<div class="layui-collapse">
-				<div class="layui-colla-item">
-					<h2 class="layui-colla-title">信息浏览 <i class="layui-icon layui-red">&#xe756;</i></h2>
-					<div class="layui-colla-content layui-show">
-						<table class="layui-table mag0" lay-skin="line" style="border: 0">
-							<colgroup>
-								<col>
-								<col width="110">
-							</colgroup>
-							<tbody class="hot_news"></tbody>
-						</table>
-					</div>
-				</div>
-			</div>
-			<div class="layui-collapse">
-				<div class="layui-colla-item">
-					<h2 class="layui-colla-title">待办事务 <i class="layui-icon layui-red">&#xe756;</i></h2>
-					<div class="layui-colla-content layui-show">内容区域</div>
-				</div>
-			</div>
-			<div class="layui-collapse">
-				<div class="layui-colla-item">
-					<h2 class="layui-colla-title">我的邮件 <i class="layui-icon layui-red">&#xe756;</i></h2>
-					<div class="layui-colla-content layui-show">内容区域</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!--[if lt IE 9]>
-	<script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
-	<script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
-	<![endif]-->
-	<script type="text/javascript" src="../layui/layui.js"></script>
-	<script type="text/javascript" src="../js/main.js"></script>
+    <!--CSS Reset-->
+    <!--说明：根据使用要求，此处可选 reset.min.css 或 normalize.min.css-->
+    <link href="./dist/32b68832cb3498ff8a962a72dfc841c9.css" type="text/css" rel="stylesheet">
+    <!--CSS Reset end-->
+
+    <!-- CSS Easyui Of insdep theme-->
+    <link href="./dist/905b74e89dd0b474494b87f6ff7a143c.css" type="text/css" rel="stylesheet">
+    <!-- CSS Easyui Of insdep theme end-->
+
+    <!-- CSS 主题样式-->
+    <link href="./dist/bcd4190d7793e941e7c228144fc75277.css" type="text/css" rel="stylesheet">
+    <!-- CSS 主题样式 end-->
+
+    <!-- CSS Alibaba iconfont字体图标库-->
+    <link href="./dist/e78b57a008f836f9f290d734a310ee62.css" type="text/css" rel="stylesheet">
+    <!-- CSS Alibaba iconfont字体图标库 end-->
+
+    <link type="text/css" href="./dist/51636cff577fbcf9ff42ecbb8f7b3353.css" rel="stylesheet">
+
+    <link type="text/css" href="./dist/b66fc9192760bff90066a7f725f8712d.css" rel="stylesheet">
+
+    <script type="text/javascript" src="./dist/fd128b0d1e8d264ba93d06b594e34ed1.js"></script>
+
+
+    <!-- JavaScript 主题脚本-->
+    <script type="text/javascript" src="./dist/33dd847d1a204ab438146229b45c70eb.js"></script>
+    <!-- JavaScript 主题脚本 end-->
+
+
+<script src="./dist/32b68832cb3498ff8a962a72dfc841c9.js"></script><script src="./dist/905b74e89dd0b474494b87f6ff7a143c.js"></script><script src="./dist/bcd4190d7793e941e7c228144fc75277.js"></script><script src="./dist/e78b57a008f836f9f290d734a310ee62.js"></script><script src="./dist/51636cff577fbcf9ff42ecbb8f7b3353.js"></script><script src="./dist/b66fc9192760bff90066a7f725f8712d.js"></script><link rel="stylesheet" href="./dist/fd128b0d1e8d264ba93d06b594e34ed1.css"><script src="./dist/ebc03068d4d81f6e8002601768f632e3.js"></script><script src="./dist/d620fc2c332e53b4affed07c02a7b30e.js"></script></head>
+
+<body>
+<!--启动顶部加载进度条-->
+<!--<script>NProgress.start();</script>-->
+<!--显示遮罩层-->
+<!--<div class="initial-mask" style="position:absolute;top:0;left:0;right:0;bottom:0;background:#fff;z-index:9999999;"></div>-->
+
+
+<!--主题整体布局-->
+
+<div class="easyui-layout theme-layout" data-options="fit:true">
+    <!--主页顶部logo-->
+    <!--north 顶部布局-->
+    <!--<div class="theme-header-layout" data-options="region:'north'">-->
+    <!--&lt;!&ndash;主页顶部logo&ndash;&gt;-->
+    <!--<div class="theme-header-logo">-->
+    <!--</div>-->
+    <!--&lt;!&ndash;顶部导航布局&ndash;&gt;-->
+    <!--<div class="theme-header-navigate">-->
+
+    <!--&lt;!&ndash;顶部导航左侧布局&ndash;&gt;-->
+    <!--<div class="left">-->
+    <!--<a href="#" class="easyui-linkbutton"><span class="iconfont theme-left-menu-switch">&#xe640;</span></a>-->
+    <!--&lt;!&ndash;用户信息&ndash;&gt;-->
+    <!--<a href="#" class="easyui-menubutton theme-header-navigate-user-button" data-options="menu:'.theme-header-navigate-user-panel'">匿名</a>-->
+    <!--<div class="theme-header-navigate-user-panel">-->
+    <!--<dl>-->
+    <!--<dd>-->
+    <!--<img src="./plugin/insdep/theme.default/images/portrait_250x250.png" width="86" height="86">-->
+    <!--<b>匿名<i class="badge color-red">10</i></b>-->
+    <!--<span class="font-grayish">examples@terry.com</span>-->
+    <!--<p>安全等级：<i class="font-green">高</i></p>-->
+    <!--</dd>-->
+    <!--<dt>-->
+    <!--<a class="theme-navigate-user-modify">修改资料</a>-->
+    <!--<a class="theme-navigate-user-logout">注销</a>-->
+    <!--</dt>-->
+    <!--</dl>-->
+    <!--</div>-->
+
+    <!--&lt;!&ndash;导航&ndash;&gt;-->
+    <!--<a href="./main.html" class="easyui-linkbutton current">办公门户</a>-->
+    <!--<a href="./gwgl.html" class="easyui-linkbutton" >公文管理</a>-->
+    <!--<a href="#" class="easyui-linkbutton" >公共信息</a>-->
+    <!--<a href="#" class="easyui-linkbutton" >行政办公<span class="badge color-red">15</span></a>-->
+    <!--<a href="#" class="easyui-linkbutton" >督查督办<span class="badge-tip color-red"></span></a>-->
+    <!--<a href="#" class="easyui-linkbutton" >新闻管理</a>-->
+    <!--<a href="#" class="easyui-linkbutton" >锁屏</a>-->
+    <!--<div class="theme-header-navigate-sep"></div>-->
+
+    <!--&lt;!&ndash;<a href="#" class="easyui-linkbutton" data-options="toggle:true,group:'g1'">菜单1</a>&ndash;&gt;-->
+    <!--&lt;!&ndash;<a href="#" class="easyui-linkbutton" data-options="toggle:true,group:'g1'">菜单2</a>&ndash;&gt;-->
+    <!--&lt;!&ndash;<a href="#" class="easyui-linkbutton" data-options="toggle:true,group:'g1',selected:true">菜单3</a>&ndash;&gt;-->
+
+    <!--&lt;!&ndash;<div class="theme-header-navigate-sep"></div>&ndash;&gt;-->
+    <!--<a href="#" class="easyui-linkbutton" >定制布局</a>-->
+    <!--<select class="easyui-combobox theme-header-navigate-combobox" data-options="editable:false" style="width:120px;">-->
+    <!--<option>系统功能</option>-->
+    <!--<option>换肤</option>-->
+    <!--<option>语言切换</option>-->
+    <!--<option>清楚缓存</option>-->
+    <!--</select>-->
+
+    <!--</div>-->
+    <!--Center 中心布局-->
+    <div class="theme-center-layout" data-options="region:'center'">
+
+        <!--内部布局-->
+        <div class="easyui-layout theme-inside-layout" data-options="fit:true">
+            <div class="theme-inside-center-layout" data-options="region:'center'">
+
+                <div class="easyui-layout" data-options="fit:true,border:false">
+                    <div data-options="region:'west',border:false" style=" overflow: hidden;width:25%;padding:10px 10px 20px 20px; background: #ececec;">
+                        <!--待阅公文-->
+                        <div class="target" id="target1">
+                            <div style="position: static" id="draggable1" class="easyui-draggable">
+                                <div class="easyui-panel " title="待阅公文" style="height:200px;padding:10px;" data-options="iconCls:'icon-save',closable:true,collapsible:true,minimizable:true,maximizable:true">
+                                    <i class="iconfont color-teal" style="font-size: 24px">&#xe694;</i>
+                                    <p style="font-size:14px">
+                                        您有没有待阅读公文
+                                    </p>
+                                    <ul>
+                                        <li>占无公文信息</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!--浏览信息-->
+                        <div class="target" id="target2">
+                            <div style="position: static" id="draggable2" class="easyui-draggable">
+                                <div class="easyui-panel " title="信息浏览" style="height:200px;padding:10px;" data-options="iconCls:'icon-save',closable:true,collapsible:true,minimizable:true,maximizable:true">
+                                    <i class="iconfont color-blue" style="font-size: 24px">&#xe60e;</i>
+                                    <p style="font-size:14px">
+                                        您没有浏览信息
+                                    </p>
+                                    <ul>
+                                        <li>占无浏览信息</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!--待办事务-->
+                        <div class="target" id="target3">
+                            <div style="position: static" id="draggable3" class="easyui-draggable">
+                                <div class="easyui-panel " title="待办事务" style="height:200px;padding:10px;" data-options="iconCls:'icon-save',closable:true,collapsible:true,minimizable:true,maximizable:true">
+                                    <i class="iconfont color-darkblue" style="font-size: 24px">&#xe610;</i>
+                                    <p style="font-size:14px">
+                                        您有待办事务<b style="color: red ">2</b>项
+                                    </p>
+                                    <span>
+                                        <p>待审事项(<b style="color: red ">2</b>)&nbsp;&nbsp;待审用车(<b style="color: red ">2</b>)&nbsp;&nbsp;待办查看(<b style="color: red ">1</b>)</p>
+                                    </span>
+                                    <ul>
+                                        <li>
+                                            <div class="message_standard_panel">
+                                                <div class="message_standard_content">
+                                                    <dl>
+                                                        <dt>用车管理申请单2011033</dt>
+                                                        <dd>来自扎西罗布 2018/01/01 00:00</dd>
+                                                    </dl>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="message_standard_panel">
+                                                <div class="message_standard_content">
+                                                    <dl>
+                                                        <dt>用车管理申请单20122230</dt>
+                                                        <dd>来自扎西罗布 2018/01/01 00:00</dd>
+                                                    </dl>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!--我的邮件-->
+                        <div class="target" id="target4">
+                            <div style="position: static" id="draggable4" class="easyui-draggable">
+                                <div class="easyui-panel " title="我的邮件" style="height:200px;padding:10px;" data-options="iconCls:'icon-save',closable:true,collapsible:true,minimizable:true,maximizable:true">
+                                    <i class="iconfont color-violet" style="font-size: 24px">&#xe68b;</i>
+                                    <p style="font-size:14px">
+                                        您有<b style="color: red ">2</b>封未读邮件
+                                    </p>
+                                    <ul>
+                                        <li>
+                                            <div class="message_standard_panel">
+                                                <div class="message_standard_content">
+                                                    <dl>
+                                                        <dt>明天有会议</dt>
+                                                        <dd>来自扎西罗布 2018/01/01 00:00</dd>
+                                                    </dl>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="message_standard_panel">
+                                                <div class="message_standard_content">
+                                                    <dl>
+                                                        <dt>下班后一起打球</dt>
+                                                        <dd>来自扎西罗布 2018/01/01 00:00</dd>
+                                                    </dl>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div data-options="region:'center',border:false" style="width:25%;padding:10px 20px 20px 10px; background: #ececec; overflow: hidden">
+
+                        <link href="./dist/ebc03068d4d81f6e8002601768f632e3.css" type="text/css" rel="stylesheet">
+                        <div class="target" id="target5">
+                            <div style="position: static" class="statistic_standard_panel statistic_standard_block easyui-draggable">
+                                <ul>
+                                    <li style="width: calc(24% - 12px);"><i class="iconfont color-red">&#xe62f;</i><span>我的会议</span><b>1</b></li>
+                                    <li style="width: calc(24% - 12px);"><i class="iconfont color-orange">&#xe688;</i><span>我的行程</span><b>1</b></li>
+                                    <li style="width: calc(24% - 12px);"><i class="iconfont color-yellow">&#xe602;</i><span>工作状态</span><b>2</b></li>
+                                    <li style="width: calc(24% - 12px);"><i class="iconfont color-olive">&#xe6c1;</i><span>信息管理</span><b>24</b></li>
+                                </ul>
+                                <ul>
+                                    <li style="width: calc(24% - 12px);"><i class="iconfont color-teal">&#xe694;</i><span>待阅公文</span><b>1</b></li>
+                                    <li style="width: calc(24% - 12px);"><i class="iconfont color-blue">&#xe60e;</i><span>信息浏览</span><b>2%</b></li>
+                                    <li style="width: calc(24% - 12px);"><i class="iconfont color-darkblue">&#xe610;</i><span>待办事务</span><b>10</b></li>
+                                    <li style="width: calc(24% - 12px);"><i class="iconfont color-violet">&#xe68b;</i><span><我的邮件></我的邮件></span><b>2</b></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!--留言互动面板-->
+                        <link href="./dist/d620fc2c332e53b4affed07c02a7b30e.css" type="text/css" rel="stylesheet">
+                        <div class="target" id="target10">
+                            <div style="position: static" class="easyui-draggable">
+                                <div class="comment">
+                                    <div class="comment_rows">
+
+                                        <div class="comment_topic">
+                                            <div class="left">
+                                                <i class="iconfont color-red">&#xe62f;</i>
+                                                <b>未来三天 中东部将迎大范围雨雪</b>
+                                                <span>中央气象台：未来三天中东部将迎大范围雨雪</span>
+                                            </div>
+                                            <div class="right">
+                                                <ul>
+                                                    <li></li>
+                                                    <li>
+                                                        <a href="#" class="easyui-menubutton" data-options="menu:'#comment_block_examples_menu_panel'"><span class="iconfont">&#xe684;</span></a>
+                                                        <div id="comment_block_examples_menu_panel" data-options="noline:true">
+                                                            <div>统计</div>
+                                                            <div class="menu-sep"></div>
+                                                            <div>标签页</div>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="comment_content">
+                                            根据气象监测显示：今天，全国范围降水较弱。内蒙古东北部、黑龙江北部和东部、西藏西部和东部、青海南部、甘肃东南部等地的部分地区有阵雪或小雪，局地有中雪；西南地区南部和东部、江南西部等地有小雨，云南西南部的部分地区有中雨。
+                                        </div>
+                                        <div class="comment_images">
+                                            <ul>
+                                                <li><img style="height: 200px;width: 300px" src="./dist/b5c9632f3c50b932c9a9c85f591648e4.jpg"></li>
+                                            </ul>
+                                        </div>
+
+                                        <div class="comment_publisher">
+                                            <div class="left">
+                                                <img src="./dist/e479bd1f7c9f36ddc5786203dd64b532.png">
+                                                <dl>
+                                                    <dt>扎西罗布</dt>
+                                                    <dd>超级管理员</dd>
+                                                </dl>
+                                            </div>
+                                            <div class="right">
+                                                <ul>
+                                                    <li><span class="badge color-yellow">官方</span></li>
+                                                    <li><span class="badge color-blue">原创</span></li>
+                                                    <li><span class="badge color-green">企业认证</span></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                        <!--<div class="comment_source">-->
+                                        <!--来自网易新闻客户端 / 2018年01月01日 00:00-->
+                                        <!--</div>-->
+
+                                        <!--<div class="comment_operation">-->
+                                        <!--<div class="left">-->
+                                        <!--<dl>-->
+                                        <!--<dt></dt>-->
+                                        <!--<dd></dd>-->
+
+                                        <!--</dl>-->
+                                        <!--</div>-->
+                                        <!--<div class="right">-->
+                                        <!--<a href="#" class="easyui-linkbutton"><span class="iconfont">&#xe64c;</span> 100</a>-->
+                                        <!--<a href="#" class="easyui-linkbutton"><span class="iconfont">&#xe669;</span> 20</a>-->
+
+
+                                        <!--<a href="#" class="easyui-menubutton" data-options="menu:'#comment_operation_examples_menu',hasDownArrow:false"><span class="iconfont">&#xe684;</span></a>-->
+                                        <!--<div id="comment_operation_examples_menu" style="width:150px;">-->
+                                        <!--<div data-options="iconCls:'icon-undo'">Undo</div>-->
+                                        <!--<div data-options="iconCls:'icon-redo'">Redo</div>-->
+                                        <!--<div class="menu-sep"></div>-->
+                                        <!--<div>Cut</div>-->
+                                        <!--<div>Copy</div>-->
+                                        <!--<div>Paste</div>-->
+                                        <!--<div class="menu-sep"></div>-->
+                                        <!--<div data-options="iconCls:'icon-remove'">Delete</div>-->
+                                        <!--<div>Select All</div>-->
+                                        <!--</div>-->
+                                        <!--</div>-->
+                                        <!--</div>-->
+
+                                        <!--<div class="comment_dynamic">-->
+                                        <!--<dl>-->
+                                        <!--<dt></dt>-->
+                                        <!--<dd></dd>-->
+                                        <!--</dl>-->
+                                        <!--</div>-->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--留言互动面板 end-->
+
+                    </div>
+                    <div data-options="region:'east',border:false" style="overflow:hidden;width:25%;padding:10px 20px 20px 10px; background: #ececec;">
+                        <!--我的会议-->
+                        <div class="target" id="target6">
+                            <div style="position: static" class="easyui-draggable">
+                                <div class="easyui-panel " title="我的会议" style="height:200px;padding:10px;" data-options="iconCls:'icon-save',closable:true,collapsible:true,minimizable:true,maximizable:true">
+                                    <i class="iconfont color-red" style="font-size: 24px">&#xe62f;</i>
+                                    <p style="font-size:14px">
+                                        您没有会议受邀
+                                    </p>
+                                    <ul>
+                                        <li>占无会议信息</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!--信息管理-->
+                        <div class="target" id="target7">
+                            <div style="position: static" class="easyui-draggable">
+                                <div class="easyui-panel  panel-bar-green" title="信息管理" style="height:200px;padding:10px;" data-options="iconCls:'icon-save',closable:true,collapsible:true,minimizable:true,maximizable:true">
+                                    <i class="iconfont color-olive" style="font-size:24px">&#xe6c1;</i>
+                                    <p style="font-size:14px">
+                                        本月共享的信息<b style="color: red ">24</b>条
+                                    </p>
+                                    <ul>
+                                        <li>
+                                            <div class="message_standard_panel">
+                                                <div class="message_standard_content">
+                                                    <dl>
+                                                        <dt>2017年是美好的一年</dt>
+                                                        <dd>来自扎西罗布 2018/01/01 00:00</dd>
+                                                    </dl>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="message_standard_panel">
+                                                <div class="message_standard_content">
+                                                    <dl>
+                                                        <dt>2017年是美好的一年</dt>
+                                                        <dd>来自扎西罗布 2018/01/01 00:00</dd>
+                                                    </dl>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="message_standard_panel">
+                                                <div class="message_standard_content">
+                                                    <dl>
+                                                        <dt>2017年是美好的一年</dt>
+                                                        <dd>来自扎西罗布 2018/01/01 00:00</dd>
+                                                    </dl>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!--工作状态-->
+                        <div class="target" id="target8">
+                            <div style="position: static" class="easyui-draggable">
+                                <div class="easyui-panel " title="工作状态" style="height:200px;padding:10px;" data-options="iconCls:'icon-save',closable:true,collapsible:true,minimizable:true,maximizable:true">
+                                    <i class="iconfont color-yellow" style="font-size: 24px">&#xe602;</i>
+                                    <p style="font-size:14px">
+                                        您有未有工作状态信息
+                                    </p>
+                                    <ul>
+                                        <li>占无工作状态信息</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!--今日行程-->
+                        <div class="target" id="target9">
+                            <div style="position: static" class="easyui-draggable">
+                                <div class="easyui-panel " title="今日行程" style="height:200px;padding:10px;" data-options="iconCls:'icon-save',closable:true,collapsible:true,minimizable:true,maximizable:true">
+                                    <i class="iconfont color-orange" style="font-size: 24px">&#xe688;</i>
+                                   <br>
+                                    <div class="timeline timeline-left">
+                                        <dl>
+                                            <dt>
+                                            <p>2017年07月01日 10:00</p>
+                                            </dt>
+                                            <dd>写报告</dd>
+                                        </dl>
+                                        <dl class="timeline-node-green">
+                                            <dt>
+                                            <p>2018年07月01日 18:00</p>
+                                            </dt>
+                                            <dd>健身</dd>
+                                        </dl>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div style="margin:20px 0;">
+                        <a href="javascript:void(0)" class="easyui-linkbutton" onclick="$('#w').window('open')">确定</a>
+                        <a href="javascript:void(0)" class="easyui-linkbutton" onclick="$('#w').window('close')">取消</a>
+                    </div>
+                    <div id="w" class="easyui-window" title="选择模块" data-options="iconCls:'icon-save'" style="width:500px;height:500px;padding:5px;">
+
+                        <div class="easyui-layout" data-options="fit:true">
+                            <div data-options="region:'center'" style="padding:10px;">
+                                <div style="margin:10px 0;">
+                                    <a href="#" id="y" class="easyui-linkbutton">获取单选数据</a>
+                                    <a href="#" class="easyui-linkbutton">获取多选数据</a>
+                                </div>
+                                <div id="data" class="easyui-datalist" title="模块列表" style="width:100%;height:100%">
+                                </div>
+                            </div>
+                            <div data-options="region:'south',border:false" style="text-align:right;padding:5px 0 0;">
+                                <a class="easyui-linkbutton" data-options="iconCls:'icon-ok'" href="javascript:void(0)" onclick="javascript:alert('ok')" style="width:80px">确定</a>
+                                <a class="easyui-linkbutton" data-options="iconCls:'icon-cancel'" href="javascript:void(0)" onclick="javascript:alert('cancel')" style="width:80px">取消</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--内部布局 end-->
+        </div>
+        <!--Center 中心布局 end-->
+
+    </div>
+
+    <!--主题整体布局 end-->
+
+
+    <!--百度统计脚本(可删除)-->
+    <!--<script>-->
+    <!--var _hmt = _hmt || [];-->
+    <!--(function() {-->
+    <!--var hm = document.createElement("script");-->
+    <!--hm.src = "https://hm.baidu.com/hm.js?2b3f4e046085001a80d501ac63aded48";-->
+    <!--var s = document.getElementsByTagName("script")[0];-->
+    <!--s.parentNode.insertBefore(hm, s);-->
+    <!--})();-->
+    <!--</script>-->
+    <!--百度统计脚本(可删除) end-->
+</div>
 </body>
 </html>
