@@ -70,8 +70,20 @@
             <div class="layui-form-item ">
                 <label class="layui-form-label" >其他</label>
                 <div class="layui-input-block" style="border: 1px solid #E6E6E6">
-                    <input type="checkbox" name="" title="办理时限" lay-skin="primary" checked>
                     <input type="checkbox" name="" title="短信提醒" lay-skin="primary">
+                    <div id="blsx" class="layui-inline">
+                    <input  type="checkbox" name="blsx" value="1" title="办理时限" lay-skin="primary">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="layui-col-md4" id = "hideRqfw" style="display: none">
+            <div class="layui-form-item ">
+                <div class="layui-inline">
+                    <label class="layui-form-label">日期范围</label>
+                    <div class="layui-input-inline">
+                        <input type="text" class="layui-input" id="rqfw" placeholder=" - ">
+                    </div>
                 </div>
             </div>
         </div>
@@ -349,6 +361,11 @@
             theme:'#1E9FFF',
             calendar: true
         });
+        //日期范围
+        laydate.render({
+            elem: '#rqfw'
+            ,range: true
+        });
         //执行实例
         var uploadInst = upload.render({
             elem: '#sc' //绑定元素
@@ -396,6 +413,16 @@
                     layer.close(index);
                 }
             });
+        })
+
+        //办理时限
+        $("#blsx").click(function(){
+            var isCheck = $('#blsx input').is(":checked");
+            if(!isCheck){
+                $('#hideRqfw').css('display', 'none')
+            }else {
+                $('#hideRqfw').css('display', '')
+            }
         })
     });
     
