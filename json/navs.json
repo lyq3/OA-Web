@@ -44,25 +44,25 @@
 				{
 					"title": "待办公文",
 					"icon": "&#xe61c;",
-					"href": "page/user/userList.html",
+					"href": "page/news/newsList.html",
 					"spread": false
 				},
 				{
 					"title": "已办公文",
 					"icon": "&#xe61c;",
-					"href": "page/user/userList.html",
+					"href": "page/news/newsList.html",
 					"spread": false
 				},
 				{
 					"title": "待阅公文",
 					"icon": "&#xe61c;",
-					"href": "page/404.html",
+					"href": "page/news/newsList.html",
 					"spread": false
 				},
 				{
 					"title": "待办待填公文",
 					"icon": "&#xe61c;",
-					"href": "page/404.html",
+					"href": "page/user/userList.html",
 					"spread": false
 				}
 			]
