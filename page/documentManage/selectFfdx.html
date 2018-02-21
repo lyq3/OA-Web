@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>选择分发对象</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="../../layui/css/layui.css" media="all" />
+    <link rel="stylesheet" href="../../css/public.css" media="all" />
+    <link rel="stylesheet" href="../../plug/tagsInput/jquery.tagsinput.min.css" media="all" />
+</head>
+<body class="childrenBody">
+<form class="layui-form">
+        <form class="layui-form">
+            <div style="margin-bottom: 5px">
+            <div class="layui-inline">
+                <div class="layui-input-inline">
+                    <input type="text" class="layui-input searchVal" placeholder="请输入搜索的内容" />
+                </div>
+                <a class="layui-btn search_btn" data-type="reload">搜索</a>
+            </div>
+            <div class="layui-inline">
+                <a class="layui-btn layui-btn-normal addNews_btn addAll_btn">批量添加</a>
+            </div>
+            <div class="layui-inline">
+                <a class="layui-btn layui-btn-danger layui-btn-normal delAll_btn">批量删除</a>
+            </div>
+            </div>
+        </form>
+    <table id="userList" lay-filter="userList"></table>
+
+    <!--已选择列表-->
+    <div style="margin-top: 10px">
+        <input name="tags" id="tags"  />
+    </div>
+
+    <!--操作-->
+    <script type="text/html" id="userListBar">
+        <button lay-event="add" class="layui-btn layui-btn-sm layui-btn-normal">
+            <i class="layui-icon">&#xe608;</i> 添加
+        </button>
+    </script>
+</form>
+<script type="text/javascript" src="../../layui/layui.js"></script>
+<script type="text/javascript" src="https://cdn.bootcss.com/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="../../plug/tagsInput/jquery.tagsinput.min.js"></script>
+<script type="text/javascript">
+    //扩展Jquery,获取地址栏参数功能
+    (function ($) {
+        $.getUrlParam = function (name) {
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+            var r = window.location.search.substr(1).match(reg);
+            if (r != null) return decodeURIComponent(r[2]); return null;
+        }
+    })(jQuery);
+    //设置初始值
+    $("#tags").val($.getUrlParam('parm'))
+
+    layui.use(['form','layer','table','laytpl'],function(){
+        var form = layui.form,
+            layer = parent.layer === undefined ? layui.layer : top.layer,
+            $ = layui.jquery,
+            laytpl = layui.laytpl,
+            table = layui.table;
+
+        //用户列表
+        var tableIns = table.render({
+            elem: '#userList',
+            url : '../../json/userList.json',
+            cellMinWidth : 95,
+            page : true,
+            height : "full-125",
+            limits : [10,15,20,25],
+            limit : 20,
+            id : "userListTable",
+            cols : [[
+                {type: "checkbox", fixed:"left", width:50},
+                {field: 'userName', title: '用户名', minWidth:100, align:"center"},
+                {field: 'userEmail', title: '用户邮箱', minWidth:200, align:'center',templet:function(d){
+                    return '<a class="layui-blue" href="mailto:'+d.userEmail+'">'+d.userEmail+'</a>';
+                }},
+                {field: 'userSex', title: '用户性别', align:'center'},
+                {field: 'userStatus', title: '用户状态',  align:'center',templet:function(d){
+                    return d.userStatus == "0" ? "正常使用" : "限制使用";
+                }},
+                {field: 'userEndTime', title: '最后登录时间', align:'center',minWidth:150},
+                {title: '操作', minWidth:175, fixed:"right",align:"center",templet:'#userListBar'}
+            ]]
+        });
+
+        //搜索【此功能需要后台配合，所以暂时没有动态效果演示】
+        $(".search_btn").on("click",function(){
+            if($(".searchVal").val() != ''){
+                var index = layer.load(0);
+                setTimeout(function(){layer.close(index)},2000)
+                table.reload("newsListTable",{
+                    page: {
+                        curr: 1 //重新从第 1 页开始
+                    },
+                    where: {
+                        key: $(".searchVal").val()  //搜索的关键字
+                    }
+                })
+            }else{
+                layer.msg("请输入搜索的内容");
+            }
+        });
+
+        //添加用户
+        function addUser(edit){
+            var index = layui.layer.open({
+                title : "添加用户",
+                type : 2,
+                content : "userAdd.html",
+                success : function(layero, index){
+                    var body = layui.layer.getChildFrame('body', index);
+                    if(edit){
+                        body.find(".userName").val(edit.userName);  //登录名
+                        body.find(".userEmail").val(edit.userEmail);  //邮箱
+                        body.find(".userSex input[value="+edit.userSex+"]").prop("checked","checked");  //性别
+                        body.find(".userGrade").val(edit.userGrade);  //会员等级
+                        body.find(".userStatus").val(edit.userStatus);    //用户状态
+                        body.find(".userDesc").text(edit.userDesc);    //用户简介
+                        form.render();
+                    }
+                    setTimeout(function(){
+                        layui.layer.tips('点击此处返回用户列表', '.layui-layer-setwin .layui-layer-close', {
+                            tips: 3
+                        });
+                    },500)
+                }
+            })
+            layui.layer.full(index);
+            //改变窗口大小时，重置弹窗的宽高，防止超出可视区域（如F12调出debug的操作）
+            $(window).on("resize",function(){
+                layui.layer.full(index);
+            })
+        }
+//        $(".addNews_btn").click(function(){
+//            addUser();
+//        })
+
+        //批量删除
+        $(".delAll_btn").click(function(){
+            var checkStatus = table.checkStatus('userListTable'),
+                data = checkStatus.data,
+                newsId = [];
+            if(data.length > 0) {
+                for (var i in data) {
+                    newsId.push(data[i].newsId);
+                }
+                layer.confirm('确定删除选中的用户？', {icon: 3, title: '提示信息'}, function (index) {
+                    for(var i in data){
+                        $('#tags').removeTag(data[i].userName);
+                    }
+                    // $.get("删除文章接口",{
+                    //     newsId : newsId  //将需要删除的newsId作为参数传入
+                    // },function(data){
+//                    tableIns.reload();
+                    layer.close(index);
+                    // })
+                })
+            }else{
+                layer.msg("请选择需要删除的用户");
+            }
+        })
+        //批量添加
+        $(".addAll_btn").click(function(){
+            var checkStatus = table.checkStatus('userListTable'),
+                data = checkStatus.data,
+                newsId = [];
+            if(data.length > 0) {
+                for (var i in data) {
+                    newsId.push(data[i].newsId);
+                }
+                layer.confirm('确定添加选中的用户？', {icon: 3, title: '提示信息'}, function (index) {
+                    for(var i in data){
+                        $('#tags').removeTag(data[i].userName);
+                        $('#tags').addTag(data[i].userName);
+                    }
+                    layer.close(index);
+                })
+            }else{
+                layer.msg("请选择需要添加的用户");
+            }
+        })
+
+        //列表操作
+        table.on('tool(userList)', function(obj){
+            var layEvent = obj.event,
+                data = obj.data;
+            if(layEvent === 'add'){ //先删除再添加，防止重复添加
+                $('#tags').removeTag(data.userName);
+                $('#tags').addTag(data.userName)
+//                parent.addFfdx($("#tags").val())
+            }
+        });
+    })
+    //标签
+    $(function(){
+        $('#tags').tagsInput({
+            'height':'50px',
+            'width':'99%',
+            'interactive':false,
+            'defaultText':'在下方选择',
+//            'onAddTag':callback_function,
+//            'onRemoveTag':callback_function,
+            'onChange' : function(){
+                parent.addFfdx($("#tags").val())
+            },
+//            'delimiter': [',',';'],   // Or a string with a single delimiter. Ex: ';'
+            'unique':true,
+//            autosize: true,
+            'removeWithBackspace' : true,
+            'minChars' : 0,
+            'maxChars' : 0, // if not provided there is no limit
+            'placeholderColor' : '#666666'
+        });
+    })
+</script>
+</body>
+</html>

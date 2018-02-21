@@ -62,7 +62,7 @@
                 <label class="layui-form-label" >分发对象</label>
                 <div class="layui-input-block">
                     <!--<div style="border: 1px solid #E6E6E6;width: 100%"></div>-->
-                    <input type="text" name="title" required lay-verify="required" placeholder="单击选择发送人" autocomplete="off" class="layui-input">
+                    <input id="ffdx" readonly="readonly" type="text" name="title" required lay-verify="required" placeholder="单击选择发送人" autocomplete="off" class="layui-input">
                 </div>
             </div>
         </div>
@@ -313,6 +313,7 @@
 <script type="text/javascript" src="../../layui/layui.js"></script>
 <script type="text/javascript" src="../../js/main.js"></script>
 <script>
+    var ffdx = ''//用于存放选择的Ffdx
     layui.use(['laydate','upload','util','layer'], function(){
         var laydate = layui.laydate;
         var upload = layui.upload;
@@ -379,6 +380,28 @@
                 });
             });
         })
+
+        //选择分发对象
+        $("#ffdx").click(function(){
+            layer.open({
+                title:'选择分发对象',
+                type: 2,
+                area: ['700px', '450px'],
+                fixed: false, //不固定
+                maxmin: true,
+                btn :['确认','取消'],
+                content: './selectFfdx.html?parm='+$("#ffdx").val(),
+                yes : function(index){
+                    $("#ffdx").val(ffdx);
+                    layer.close(index);
+                }
+            });
+        })
     });
+    
+    //父子操作方法
+    function addFfdx(parm) {
+        ffdx = parm;
+    }
 
 </script>
