@@ -22,8 +22,8 @@
 <body style="overflow-x: hidden">
 <!--保存按钮-->
 <div style="float: right;margin-right: 20px;position:fixed;right: 20px;top: 50px;z-index: 9999">
-    <button class="layui-btn layui-btn-normal top-btn">保存</button>
-    <button class="layui-btn top-btn">提交</button>
+    <button id="saveOfficial" class="layui-btn layui-btn-normal top-btn">保存</button>
+    <button id="commitOfficial" class="layui-btn top-btn">提交</button>
 </div>
 <!--<div style="margin-left: 20px">模板选择<hr style="margin: 0" class="layui-bg-blue"></div>-->
 <blockquote class="layui-elem-quote" style="margin-left: 20px;line-height: 10px;margin-top: 5px">模板选择</blockquote>
@@ -234,8 +234,8 @@
         <div class="layui-col-md6" >
             <label class="layui-form-label" >纸　张</label>
             <div class="layui-input-block">
-                <input type="radio" name="zz" value="1" title="A4">
-                <input type="radio" name="zz" value="2" title="16K" checked>
+                <input type="radio" name="zz" value="1" title="A4" checked>
+                <input type="radio" name="zz" value="2" title="16K" >
             </div>
         </div>
     </div>
@@ -313,10 +313,12 @@
 <script type="text/javascript" src="../../layui/layui.js"></script>
 <script type="text/javascript" src="../../js/main.js"></script>
 <script>
-    layui.use(['laydate','upload','util'], function(){
+    layui.use(['laydate','upload','util','layer'], function(){
         var laydate = layui.laydate;
         var upload = layui.upload;
         var util = layui.util;
+        var layer = layui.layer;
+        var $ = layui.jquery;
         //执行
         util.fixbar({
             bar1: false
@@ -337,7 +339,8 @@
         laydate.render({
             elem: '#qcrq', //指定元素
             theme:'#1E9FFF',
-            calendar: true
+            calendar: true,
+            value: new Date()
         });
         //印发日期
         laydate.render({
@@ -356,5 +359,26 @@
                 //请求异常回调
             }
         });
+
+        //保存 提交按钮单击
+        $(function(){
+            $("#saveOfficial").click(function(){
+                layer.msg("保存成功，仅为演示");
+            });
+            $("#commitOfficial").click(function(){
+                layer.confirm('是否提交公文?', {
+                    btn: ['提交','放弃'], //按钮
+                    icon : 3
+                }, function(){
+                    layer.msg('提交成功，仅为演示', {icon: 1});
+                }, function(){
+                    layer.msg('取消后会顺便将公文保存但不会提交', {
+                        time: 20000, //20s后自动关闭
+                        btn: ['明白了', '原来如此']
+                    });
+                });
+            });
+        })
     });
+
 </script>
