@@ -33,7 +33,7 @@ layui.define(["element","jquery"],function(exports){
                 ulHtml += '<li class="layui-nav-item">';
             }
             if(data[i].children != undefined && data[i].children.length > 0){
-                ulHtml += '<a style="background-color: #6CB0D3">';
+                ulHtml += '<a class="zw" style="background-color: #6CB0D3">';
                 if(data[i].icon != undefined && data[i].icon != ''){
                     if(data[i].icon.indexOf("icon-") != -1){
                         ulHtml += '<i class="seraph '+data[i].icon+'" data-icon="'+data[i].icon+'"></i>';
@@ -41,15 +41,15 @@ layui.define(["element","jquery"],function(exports){
                         ulHtml += '<i class="layui-icon" data-icon="'+data[i].icon+'">'+data[i].icon+'</i>';
                     }
                 }
-                ulHtml += '<cite>'+data[i].title+'</cite>';
+                ulHtml += '<cite data-locale="'+data[i].locale+'">'+data[i].title+'</cite>';
                 ulHtml += '<span class="layui-nav-more"></span>';
                 ulHtml += '</a>';
                 ulHtml += '<dl class="layui-nav-child">';
                 for(var j=0;j<data[i].children.length;j++){
                     if(data[i].children[j].target == "_blank"){
-                        ulHtml += '<dd style="background-color: #6CB0D3"><a data-url="'+data[i].children[j].href+'" target="'+data[i].children[j].target+'">';
+                        ulHtml += '<dd style="background-color: #6CB0D3"><a class="zw" data-url="'+data[i].children[j].href+'" target="'+data[i].children[j].target+'">';
                     }else{
-                        ulHtml += '<dd style="background-color: #6CB0D3"><a data-url="'+data[i].children[j].href+'">';
+                        ulHtml += '<dd style="background-color: #6CB0D3"><a class="zw" data-url="'+data[i].children[j].href+'">';
                     }
                     if(data[i].children[j].icon != undefined && data[i].children[j].icon != ''){
                         if(data[i].children[j].icon.indexOf("icon-") != -1){
@@ -58,14 +58,14 @@ layui.define(["element","jquery"],function(exports){
                             ulHtml += '<i class="layui-icon" data-icon="'+data[i].children[j].icon+'">'+data[i].children[j].icon+'</i>';
                         }
                     }
-                    ulHtml += '<cite>'+data[i].children[j].title+'</cite></a></dd>';
+                    ulHtml += '<cite data-locale="'+data[i].children[j].locale+'">'+data[i].children[j].title+'</cite></a></dd>';
                 }
                 ulHtml += "</dl>";
             }else{
                 if(data[i].target == "_blank"){
-                    ulHtml += '<a data-url="'+data[i].href+'" target="'+data[i].target+'">';
+                    ulHtml += '<a class="zw" data-url="'+data[i].href+'" target="'+data[i].target+'">';
                 }else{
-                    ulHtml += '<a data-url="'+data[i].href+'">';
+                    ulHtml += '<a class="zw" data-url="'+data[i].href+'">';
                 }
                 if(data[i].icon != undefined && data[i].icon != ''){
                     if(data[i].icon.indexOf("icon-") != -1){
@@ -74,7 +74,7 @@ layui.define(["element","jquery"],function(exports){
                         ulHtml += '<i class="layui-icon" data-icon="'+data[i].icon+'">'+data[i].icon+'</i>';
                     }
                 }
-                ulHtml += '<cite>'+data[i].title+'</cite></a>';
+                ulHtml += '<cite data-locale="'+data[i].locale+'">'+data[i].title+'</cite>';
             }
             ulHtml += '</li>';
         }
@@ -84,7 +84,7 @@ layui.define(["element","jquery"],function(exports){
 	Tab.prototype.render = function() {
 		//显示左侧菜单
 		var _this = this;
-		$(".navBar ul").html('<li class="layui-nav-item layui-this"><a data-url="page/main2.html"><i class="layui-icon" data-icon=""></i><cite>办公门户</cite></a></li>').append(_this.navBar(dataStr)).height($(window).height()-210);
+		$(".navBar ul").html('<li class="layui-nav-item layui-this"><a class="zw" data-url="page/main2.html"><i class="layui-icon" data-icon=""></i><cite data-locale="bangongmenhu">办公门户</cite></a></li>').append(_this.navBar(dataStr)).height($(window).height()-210);
 		element.init();  //初始化页面元素
 		$(window).resize(function(){
 			$(".navBar").height($(window).height()-210);

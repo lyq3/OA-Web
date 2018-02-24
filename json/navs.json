@@ -1,121 +1,137 @@
 {
-	"xingzhengbangong": [
-		{
-			"title": "审批管理",
-			"icon": "icon-text",
-			"href": "",
-			"spread": false
-		},
-		{
-			"title": "短信管理",
-			"icon": "&#xe630;",
-			"href": "",
-			"spread": false
-		}
-	],
-	"gongwenguanli": [
-		{
-			"title": "公文办理",
-			"icon": "&#xe612;",
-			"href": "page/user/userList.html",
-			"spread": false,
-			"children": [
-				{
-					"title": "待办公文",
-					"icon": "&#xe61c;",
-					"href": "page/news/newsList.html",
-					"spread": false
-				},
-				{
-					"title": "已办公文",
-					"icon": "&#xe61c;",
-					"href": "page/news/newsList.html",
-					"spread": false
-				},
-				{
-					"title": "待阅公文",
-					"icon": "&#xe61c;",
-					"href": "page/news/newsList.html",
-					"spread": false
-				},
-				{
-					"title": "待办待填公文",
-					"icon": "&#xe61c;",
-					"href": "page/user/userList.html",
-					"spread": false
-				}
-			]
-		},
-		{
-			"title": "公文起草",
-			"icon": "icon-vip",
-			"href": "page/user/userGrade.html",
-			"spread": false,
-			"children": [
-				{
-					"title": "新建公文",
-					"icon": "&#xe61c;",
-					"href": "page/documentManage/newDocument.html",
-					"spread": false
-				},
-				{
-					"title": "事务类通知",
-					"icon": "&#xe61c;",
-					"href": "page/user/userGrade.html",
-					"spread": false
-				},
-				{
-					"title": "快速发文",
-					"icon": "&#xe61c;",
-					"href": "page/documentManage/quicklyRelease.html",
-					"spread": false
-				}
-			]
-		}
-	],
-	"gonggongxinxi": [
-		{
-			"title": "政务期刊",
-			"icon": "icon-log",
-			"href": "",
-			"spread": false
-		}
-	],
-	"xitongguanli": [
-		{
-			"title": "系统管理",
-			"icon": "icon-mokuai",
-			"href": "",
-			"spread": false
-		}
-	],
-	"duchaduban":
-	[
-		{
-			"title": "督查督办",
-			"icon": "&#xe61c;",
-			"href": "",
-			"spread": false
-		}
-	],
-	"neibuluntan":
-	[
-		{
-			"title": "内部论坛",
-			"icon": "&#xe61c;",
-			"href": "",
-			"spread": false
-		}
-	],
-	"gerenbangong":
-	[
-		{
-			"title": "个人办公",
-			"icon": "&#xe61c;",
-			"href": "",
-			"spread": false
-		}
-	]
+  "xingzhengbangong": [
+    {
+      "title": "审批管理",
+      "icon": "icon-text",
+      "href": "page/wait.html",
+      "locale":"shengpiguanli",
+      "spread": false
+    },
+    {
+      "title": "短信管理",
+      "icon": "&#xe630;",
+      "href": "page/wait.html",
+      "locale":"duanxinguanli",
+      "spread": false
+    }
+  ],
+  "gongwenguanli": [
+    {
+      "title": "公文办理",
+      "icon": "&#xe612;",
+      "href": "page/user/userList.html",
+      "locale":"gongwenbanli",
+      "spread": false,
+      "children": [
+        {
+          "title": "待办公文",
+          "icon": "&#xe61c;",
+          "href": "page/news/newsList.html",
+          "locale":"daibangongwen",
+          "spread": false
+        },
+        {
+          "title": "已办公文",
+          "icon": "&#xe61c;",
+          "href": "page/news/newsList.html",
+          "locale":"yibangongwen",
+          "spread": false
+        },
+        {
+          "title": "待阅公文",
+          "icon": "&#xe61c;",
+          "href": "page/news/newsList.html",
+          "locale":"daiyuegongwen",
+          "spread": false
+        },
+        {
+          "title": "待办待填公文",
+          "icon": "&#xe61c;",
+          "href": "page/user/userList.html",
+          "locale":"daibandaitiangongwen",
+          "spread": false
+        }
+      ]
+    },
+    {
+      "title": "公文起草",
+      "icon": "icon-vip",
+      "href": "page/user/userGrade.html",
+      "locale":"gongwenqicao",
+      "spread": false,
+      "children": [
+        {
+          "title": "新建公文",
+          "icon": "&#xe61c;",
+          "href": "page/documentManage/newDocument.html",
+          "locale":"xinjiangongwen",
+          "spread": false
+        },
+        {
+          "title": "事务类通知",
+          "icon": "&#xe61c;",
+          "href": "page/user/userGrade.html",
+          "locale":"shiwuleitongzhi",
+          "spread": false
+        },
+        {
+          "title": "快速发文",
+          "icon": "&#xe61c;",
+          "href": "page/documentManage/quicklyRelease.html",
+          "locale":"kuaisufawen",
+          "spread": false
+        }
+      ]
+    }
+  ],
+  "gonggongxinxi": [
+    {
+      "title": "政务期刊",
+      "icon": "icon-log",
+      "href": "page/wait.html",
+      "locale":"zhengwuqikan",
+      "spread": false
+    }
+  ],
+  "xitongguanli": [
+    {
+      "title": "系统管理",
+      "icon": "icon-mokuai",
+      "href": "page/wait.html",
+      "locale":"xitongguanli",
+      "spread": false
+    }
+  ],
+  "duchaduban":
+  [
+    {
+      "title": "督查督办",
+      "icon": "&#xe61c;",
+      "href": "page/wait.html",
+      "locale":"duchaduban",
+      "spread": false
+    }
+  ],
+  "neibuluntan":
+  [
+    {
+      "title": "内部论坛",
+      "icon": "&#xe61c;",
+      "href": "page/wait.html",
+      "locale":"neibuluntan",
+      "spread": false
+    }
+  ],
+  "gerenbangong":
+  [
+    {
+      "title": "个人办公",
+      "icon": "&#xe61c;",
+      "href": "page/wait.html",
+      "locale":"gerenbangong",
+      "spread": false
+    }
+  ]
 }
 
 
