@@ -1,40 +1,19 @@
 {
-	"contentManagement": [
+	"xingzhengbangong": [
 		{
-			"title": "文章列表",
+			"title": "审批管理",
 			"icon": "icon-text",
-			"href": "page/news/newsList.html",
+			"href": "",
 			"spread": false
 		},
 		{
-			"title": "图片管理",
-			"icon": "&#xe634;",
-			"href": "page/img/images.html",
-			"spread": false
-		},
-		{
-			"title": "其他页面",
+			"title": "短信管理",
 			"icon": "&#xe630;",
 			"href": "",
-			"spread": false,
-			"children": [
-				{
-					"title": "404页面",
-					"icon": "&#xe61c;",
-					"href": "page/404.html",
-					"spread": false
-				},
-				{
-					"title": "登录",
-					"icon": "&#xe609;",
-					"href": "page/login/login.html",
-					"spread": false,
-					"target": "_blank"
-				}
-			]
+			"spread": false
 		}
 	],
-	"memberCenter": [
+	"gongwenguanli": [
 		{
 			"title": "公文办理",
 			"icon": "&#xe612;",
@@ -94,44 +73,46 @@
 			]
 		}
 	],
-	"systemeSttings": [
+	"gonggongxinxi": [
 		{
-			"title": "系统基本参数",
-			"icon": "&#xe631;",
-			"href": "page/systemSetting/basicParameter.html",
-			"spread": false
-		},{
-			"title": "系统日志",
+			"title": "政务期刊",
 			"icon": "icon-log",
-			"href": "page/systemSetting/logs.html",
-			"spread": false
-		},{
-			"title": "友情链接",
-			"icon": "&#xe64c;",
-			"href": "page/systemSetting/linkList.html",
-			"spread": false
-		},{
-			"title": "图标管理",
-			"icon": "&#xe857;",
-			"href": "page/systemSetting/icons.html",
+			"href": "",
 			"spread": false
 		}
 	],
-	"seraphApi": [
+	"xitongguanli": [
 		{
-			"title": "三级联动模块",
+			"title": "系统管理",
 			"icon": "icon-mokuai",
-			"href": "page/doc/addressDoc.html",
+			"href": "",
 			"spread": false
-		},{
-			"title": "bodyTab模块",
-			"icon": "icon-mokuai",
-			"href": "page/doc/bodyTabDoc.html",
+		}
+	],
+	"duchaduban":
+	[
+		{
+			"title": "督查督办",
+			"icon": "&#xe61c;",
+			"href": "",
 			"spread": false
-		},{
-			"title": "三级菜单",
-			"icon": "icon-mokuai",
-			"href": "page/doc/navDoc.html",
+		}
+	],
+	"neibuluntan":
+	[
+		{
+			"title": "内部论坛",
+			"icon": "&#xe61c;",
+			"href": "",
+			"spread": false
+		}
+	],
+	"gerenbangong":
+	[
+		{
+			"title": "个人办公",
+			"icon": "&#xe61c;",
+			"href": "",
 			"spread": false
 		}
 	]
