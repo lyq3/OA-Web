@@ -43,7 +43,7 @@ layui.use(['form','layer','laydate','table','laytpl'],function(){
             param.registNo = $("#registNo").val()
         }
         if($("#registerStatusSearch").val() !== ''){
-            param.registerStatus = $("#registerStatusSearch".val())
+            param.registerStatus = $("#registerStatusSearch").val()
         }
         table.reload("newsListTable",{
             page: {
