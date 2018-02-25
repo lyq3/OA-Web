@@ -21,8 +21,8 @@ layui.use(['form','layer','laydate','table','laytpl'],function(){
             {field: 'registerStatus', title: '状态', width:80, align:'center',templet:"#registerStatus"},
             {field: 'type', title: '类型', width:80, align:"center"},
             {field: 'registNo', title: '收文号', width:80, align:"center"},
-            {field: 'sponsor', title: '主办单位', width:300},
-            {field: 'sponsorNo', title: '主办号', align:'center', minWidth:150, templet:function(d){
+            {field: 'sponsor', title: '主办单位', width:200},
+            {field: 'sponsorNo', title: '主办号', align:'center', minWidth:200, templet:function(d){
                 return "城工信发（2018）2号";
             }},
             {field: 'registTitle', title: '公文标题',minWidth:350, align:'center'},
