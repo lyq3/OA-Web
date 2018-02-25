@@ -27,20 +27,19 @@
 </div>
 <!--<div style="margin-left: 20px">模板选择<hr style="margin: 0" class="layui-bg-blue"></div>-->
 <blockquote class="layui-elem-quote" style="margin-left: 20px;line-height: 10px;margin-top: 5px">模板选择</blockquote>
-
+<!--表单1-->
 <div class="layui-form layui-form-pane" >
     <div class="layui-row layui-col-space20" style="margin-top: 5px;margin-left: 20px">
         <div class="layui-col-md4" >
             <div class="layui-form-item">
                 <label class="layui-form-label" >公文模板</label>
                 <div class="layui-input-block">
-                    <select name="city" lay-verify="required" >
-                        <option value=""></option>
-                        <option value="0">城关区安全生产委员会</option>
-                        <option value="1">城关区安全生产委员会办公室</option>
-                        <option value="2">城关区文广局简报</option>
-                        <option value="3">城关区文广局文件</option>
-                        <option value="4">科技局文件</option>
+                    <select name="mbmc" lay-verify="" >
+                        <option value="城关区净土农业发展有限公司">城&nbsp;关&nbsp;区&nbsp;净&nbsp;土&nbsp;农&nbsp;业&nbsp;发&nbsp;展&nbsp;有&nbsp;限&nbsp;公&nbsp;司</option>
+                        <option value="城关区安全生产委员会">城&nbsp;关&nbsp;区&nbsp;安&nbsp;全&nbsp;生&nbsp;产&nbsp;委&nbsp;员&nbsp;会</option>
+                        <option value="城关区文广局简报">城&nbsp;关&nbsp;区&nbsp;文&nbsp;广&nbsp;局&nbsp;简&nbsp;报</option>
+                        <option value="城关区文广局文件">城&nbsp;关&nbsp;区&nbsp;文&nbsp;广&nbsp;局&nbsp;文&nbsp;件</option>
+                        <option value="科技局文件">科&nbsp;技&nbsp;局&nbsp;文&nbsp;件</option>
                     </select>
                 </div>
             </div>
@@ -49,7 +48,7 @@
             <div class="layui-form-item">
                 <label class="layui-form-label" >版记模板</label>
                 <div class="layui-input-block">
-                    <select name="city" lay-verify="required" >
+                    <select name="city" lay-verify="" >
                         <option value="0">版记模板</option>
                     </select>
                 </div>
@@ -62,7 +61,7 @@
                 <label class="layui-form-label" >分发对象</label>
                 <div class="layui-input-block">
                     <!--<div style="border: 1px solid #E6E6E6;width: 100%"></div>-->
-                    <input id="ffdx" readonly="readonly" type="text" name="title" required lay-verify="required" placeholder="单击选择发送人" autocomplete="off" class="layui-input">
+                    <input id="ffdx" readonly="readonly" type="text" name="title" required lay-verify="" placeholder="单击选择发送人" autocomplete="off" class="layui-input">
                 </div>
             </div>
         </div>
@@ -72,7 +71,7 @@
                 <div class="layui-input-block" style="border: 1px solid #E6E6E6">
                     <input type="checkbox" name="" title="短信提醒" lay-skin="primary">
                     <div id="blsx" class="layui-inline">
-                    <input  type="checkbox" name="blsx" value="1" title="办理时限" lay-skin="primary">
+                        <input  type="checkbox" name="blsx" value="1" title="办理时限" lay-skin="primary">
                     </div>
                 </div>
             </div>
@@ -88,6 +87,7 @@
             </div>
         </div>
     </div>
+    <button id="createEdit3" style="height: 0;width: 0" lay-submit lay-filter="createEdit3" ></button>
 </div>
 
 
@@ -100,44 +100,72 @@
     <div class="layui-row layui-col-space10">
         <div class="layui-col-md2" ></div>
         <div class="layui-col-md6" >
-        <div >
-            <div class="layui-form-item">
-                <div class="layui-input-block">
-                    <select name="city" lay-verify="required" >
-                        <option value="0">版记模板</option>
-                    </select>
+            <div >
+                <div class="layui-form-item">
+                    <div class="layui-input-block">
+                        <select name="city" lay-verify="" >
+                            <option value="0">版记模板</option>
+                        </select>
+                    </div>
                 </div>
             </div>
-        </div>
         </div>
         <!--<div class="layui-col-md4" ></div>-->
     </div>
     <!--文种-->
-    <div class="layui-row layui-col-space10">
-        <div class="layui-col-md4" >
+    <div class="layui-row layui-col-space1">
+        <div class="layui-col-md3" >
             <label class="layui-form-label" ><span style="color: red">* </span>文　种</label>
             <div class="layui-input-block">
-                <select name="city" lay-verify="required" >
-                    <option value="0">版记模板</option>
+                <select name="wz" lay-verify="" >
+                    <option value="0"> 通知</option>
+                    <option value="1"> 请示</option>
+                    <option value="2"> 批复</option>
+                    <option value="3"> 申请</option>
+                    <option value="4"> 决定</option>
+                    <option value="5"> 会议</option>
+                    <option value="6"> 决定</option>
+                    <option value="7"> 通报</option>
+                    <option value="8"> 函</option>
+                    <option value="9"> 简报</option>
                 </select>
             </div>
         </div>
-        <div class="layui-col-md4" >
+        <div class="layui-col-md3" >
             <label class="layui-form-label" ><span style="color: red">* </span>发文字号</label>
             <div class="layui-input-block">
-                <select name="city" lay-verify="required" >
-                    <option value="0">版记模板</option>
+                <select name="fwdw" lay-verify="" >
+                    <option value="城工信发文 [2018]">城工信发文</option>>
+                    <option value="城委办 [2018]">城委办</option>>
+                    <option value="城人大办 [2018]">城人大办</option>>
+                    <option value="城人大办 [2018]">城人大办</option>>
+                    <option value="城党组发 [2018]">城党组发</option>>
+                    <option value="城政 [2018]">城政</option>>
+                    <option value="城政复 [2018]">城政复</option>>
                 </select>
             </div>
         </div>
-        <div class="layui-col-md4" >
-            <label class="layui-form-label" >其他</label>
+
+        <div class="layui-col-md4">
+            <label class="layui-form-label">日期</label>
+            <div class="layui-input-inline">
+                <input type="text" name="whrq" class="layui-input" id="whrq" placeholder="请选择日期">
+            </div>
+        </div>
+        <div class="layui-col-md2" >
+            <label class="layui-form-label">号</label>
             <div class="layui-input-block">
-                <select name="city" lay-verify="required" >
-                    <option value="0">版记模板</option>
-                </select>
+                <input type="text" name="wh" required lay-verify="number" value="1" autocomplete="off" class="layui-input">
             </div>
         </div>
+        <!--<div class="layui-col-md4" >-->
+        <!--<label class="layui-form-label" >其他</label>-->
+        <!--<div class="layui-input-block">-->
+        <!--<select name="city" lay-verify="required" >-->
+        <!--<option value="0">版记模板</option>-->
+        <!--</select>-->
+        <!--</div>-->
+        <!--</div>-->
     </div>
 
     <!--签发人-->
@@ -145,7 +173,7 @@
         <div class="layui-col-md4" >
             <label class="layui-form-label" >签发人</label>
             <div class="layui-input-block">
-                <input type="text" name="title" required lay-verify="required" value="管理员" autocomplete="off" class="layui-input">
+                <input type="text" name="title" required lay-verify="" value="管理员" autocomplete="off" class="layui-input">
             </div>
         </div>
         <div class="layui-col-md4" >
@@ -167,10 +195,10 @@
 
     <!--公文标题-->
     <div class="layui-row layui-col-space10">
-            <div class="layui-col-md12" >
-                <label class="layui-form-label" ><span style="color: red">* </span>公文标题</label>
-                <div class="layui-input-block">
-                    <input type="text" name="title" required lay-verify="required" placeholder="输入公文标题" autocomplete="off" class="layui-input">
+        <div class="layui-col-md12" >
+            <label class="layui-form-label" ><span style="color: red">* </span>公文标题</label>
+            <div class="layui-input-block">
+                <input type="text" name="title" required lay-verify="" placeholder="输入公文标题" autocomplete="off" class="layui-input">
             </div>
         </div>
     </div>
@@ -179,13 +207,13 @@
         <div class="layui-col-md6" >
             <label class="layui-form-label" >主送机关</label>
             <div class="layui-input-block">
-                <input type="text" name="title" required lay-verify="required" placeholder="输入内容" autocomplete="off" class="layui-input">
+                <input type="text" name="title" required lay-verify="" placeholder="输入内容" autocomplete="off" class="layui-input">
             </div>
         </div>
         <div class="layui-col-md6" >
             <label class="layui-form-label" >抄送机关</label>
             <div class="layui-input-block">
-                <input type="text" name="title" required lay-verify="required" placeholder="输入内容" autocomplete="off" class="layui-input layui-inline">
+                <input type="text" name="title" required lay-verify="" placeholder="输入内容" autocomplete="off" class="layui-input layui-inline">
             </div>
         </div>
     </div>
@@ -194,7 +222,7 @@
         <div class="layui-col-md12" >
             <label class="layui-form-label" >附注</label>
             <div class="layui-input-block">
-                <input type="text" name="title" required lay-verify="required" placeholder="输入内容" autocomplete="off" class="layui-input">
+                <input type="text" name="title" required lay-verify="" placeholder="输入内容" autocomplete="off" class="layui-input">
             </div>
         </div>
     </div>
@@ -204,7 +232,7 @@
         <div class="layui-col-md6" >
             <label class="layui-form-label" >紧急程度</label>
             <div class="layui-input-block">
-                <select name="city" lay-verify="required" >
+                <select name="city" lay-verify="" >
                     <option value="0">非急件</option>
                     <option value="1">紧急</option>
                     <option value="2">普通</option>
@@ -214,7 +242,7 @@
         <div class="layui-col-md6" >
             <label class="layui-form-label" >文件密级</label>
             <div class="layui-input-block">
-                <input type="text" name="title" required lay-verify="required" value="无密级" autocomplete="off" class="layui-input layui-inline">
+                <input type="text" name="title" required lay-verify="" value="无密级" autocomplete="off" class="layui-input layui-inline">
             </div>
         </div>
     </div>
@@ -224,13 +252,13 @@
         <div class="layui-col-md6" >
             <label class="layui-form-label" >拟稿人</label>
             <div class="layui-input-block">
-                <input type="text" name="title" required lay-verify="required" value="管理员" autocomplete="off" class="layui-input">
+                <input type="text" name="title" required lay-verify="" value="管理员" autocomplete="off" class="layui-input">
             </div>
         </div>
         <div class="layui-col-md6" >
             <label class="layui-form-label" >拟稿部门</label>
             <div class="layui-input-block">
-                <input type="text" name="title" required lay-verify="required" value="管理员" autocomplete="off" class="layui-input layui-inline">
+                <input type="text" name="title" required lay-verify="" value="管理员" autocomplete="off" class="layui-input layui-inline">
             </div>
         </div>
     </div>
@@ -257,7 +285,7 @@
         <div class="layui-col-md6" >
             <label class="layui-form-label" >文印 (份数)</label>
             <div class="layui-input-block">
-                <input type="text" name="title" required lay-verify="required" value="0" autocomplete="off" class="layui-input">
+                <input type="text" name="title" required lay-verify="" value="0" autocomplete="off" class="layui-input">
             </div>
         </div>
         <div class="layui-col-md6" >
@@ -291,31 +319,20 @@
         </div>
     </div>
 
+    <button id="createEdit2" style="height: 0;width: 0" lay-submit lay-filter="createEdit2" ></button>
 </div>
 <!--公文编辑区-->
 <!-- 加载编辑器的容器 -->
 <blockquote class="layui-elem-quote" style="margin-left: 20px;line-height: 10px;margin-bottom: 0">公文编辑</blockquote>
+<button id="createEdit" class="layui-btn layui-btn-normal top-btn " lay-submit lay-filter="createEdit" style="margin:10px 0px 10px 20px">生成模板</button>
 <div id="container" name="content" style="margin: 0 20px 20px 20px">　</div>
 <!-- 配置文件 -->
 <script type="text/javascript" src="../../plug/ueditor1.4.3/ueditor.config.js"></script>
 <!-- 编辑器源码文件 -->
 <script type="text/javascript" src="../../plug/ueditor1.4.3/ueditor.all.js"></script>
-<!-- 实例化编辑器 -->
+
 <script type="text/javascript">
-    var ue = UE.getEditor('container',{
-        initialFrameHeight : 400
-    });
-    ue.ready(function() {
-        ue.setContent('<h2 style="font-size: 32px; font-weight: bold; border-bottom: 2px solid red; padding: 0px 4px 50px 0px; text-align: center; margin: 0px 0px 20px;">\n' +
-            '    <span style="color: rgb(255, 0, 0); font-family: 宋体, SimSun;">&nbsp;<strong>拉&nbsp; 萨&nbsp; 市&nbsp; 城&nbsp; 关&nbsp; 区&nbsp; 政&nbsp; 府</strong></span>\n' +
-            '</h2>\n' +
-            '<p>\n' +
-            '    <span style="color: rgb(255, 0, 0); font-family: 宋体, SimSun;"><strong><br/></strong></span>\n' +
-            '</p>\n' +
-            '<p>\n' +
-            '    <br/>\n' +
-            '</p>');
-    });
+
 </script>
 </body>
 <!--[if lt IE 9]>
@@ -326,7 +343,8 @@
 <script type="text/javascript" src="../../js/main.js"></script>
 <script>
     var ffdx = ''//用于存放选择的Ffdx
-    layui.use(['laydate','upload','util','layer'], function(){
+    layui.use(['laydate','upload','util','layer','form'], function(){
+        var form = layui.form;
         var laydate = layui.laydate;
         var upload = layui.upload;
         var util = layui.util;
@@ -366,6 +384,11 @@
             elem: '#rqfw'
             ,range: true
         });
+        //文件日期
+        laydate.render({
+            elem: '#whrq',
+            type: 'year'
+        });
         //执行实例
         var uploadInst = upload.render({
             elem: '#sc' //绑定元素
@@ -396,7 +419,48 @@
                     });
                 });
             });
+
+
         })
+
+        var edit_param1;
+        var edit_param2;
+
+        form.on('submit(createEdit3)', function(data){
+            edit_param1=$.parseJSON(JSON.stringify(data.field));
+            return false;
+        });
+        form.on('submit(createEdit2)', function(data){
+            edit_param2=$.parseJSON(JSON.stringify(data.field));
+            return false;
+        });
+
+        $("#createEdit").on("click",function () {
+            $("#createEdit2").trigger('click');
+            $("#createEdit3").trigger('click');
+            //实例化编辑器
+            var ue = UE.getEditor('container',{
+                initialFrameHeight : 400
+            });
+            ue.ready(function() {
+                var title=edit_param1.mbmc;
+                var content1=edit_param2.fwdw+"&nbsp;"+edit_param2.wh+"&nbsp;号";
+                ue.setContent('<h2 style="font-size: 32px; font-weight: bold;  padding: 0px 4px 20px 0px; text-align: center; ">\n' +
+                    '    <span style="color: rgb(255, 0, 0); font-family: 宋体, SimSun;">&nbsp;<strong>ल्हासा चेन्गुन जिला शुद्ध भूमि कृषि कं लिमिटेड दस्तावेज</strong></span>\n' +
+                    '</h2>\n' +
+                    '<h2 style="font-size: 32px; font-weight: bold;  padding: 0px 4px 50px 0px; text-align: center; margin: 0px 0px 20px;">\n' +
+                    '    <span style="color: rgb(255, 0, 0); font-family: 宋体, SimSun;">&nbsp;<strong>'+title+'</strong></span>\n' +
+                    '</h2>\n' +
+                    '<h2 style="font-size: 14px;font-weight: bold;margin-top: 10px;border-bottom: 2px solid red;text-align:center;">'+content1+'</h2>\n'+
+                    '<p>\n' +
+                    '    <span style="color: rgb(255, 0, 0); font-family: 宋体, SimSun;"><strong><br/></strong></span>\n' +
+                    '</p>\n' +
+                    '<p>\n' +
+                    '    <br/>\n' +
+                    '</p>');
+            });
+        });
+
 
         //选择分发对象
         $("#ffdx").click(function(){
@@ -425,7 +489,7 @@
             }
         })
     });
-    
+
     //父子操作方法
     function addFfdx(parm) {
         ffdx = parm;

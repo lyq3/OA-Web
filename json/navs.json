@@ -47,7 +47,7 @@
         {
           "title": "待办待填公文",
           "icon": "&#xe61c;",
-          "href": "page/user/userList.html",
+          "href": "page/news/newsList.html",
           "locale":"daibandaitiangongwen",
           "spread": false
         }
@@ -70,7 +70,7 @@
         {
           "title": "事务类通知",
           "icon": "&#xe61c;",
-          "href": "page/user/userGrade.html",
+          "href": "page/wait.html",
           "locale":"shiwuleitongzhi",
           "spread": false
         },

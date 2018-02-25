@@ -6,6 +6,11 @@ layui.use(['form','layer','laydate','table','laytpl'],function(){
         laytpl = layui.laytpl,
         table = layui.table;
 
+    laydate.render({
+        elem: '#rq',
+        type: 'month'
+    });
+
     //新闻列表
     var tableIns = table.render({
         elem: '#newsList',
@@ -19,8 +24,9 @@ layui.use(['form','layer','laydate','table','laytpl'],function(){
         cols : [[
             {type: "checkbox", fixed:"left", width:50},
             {field: 'newsId', title: 'ID', width:60, align:"center"},
+            {field: 'user', title: '接收部门',  align:"center"},
             {field: 'newsStatus', title: '办理状态',  align:'center',templet:"#newsStatus"},
-            {field: 'newsName', title: '公文标题', width:350},
+            {field: 'newsName', title: '公文标题', width:240},
             {field: 'newsWh', title: '文号', align:'center', minWidth:210, templet:function(d){
                 return "城工信发（2018）2号";
             }},

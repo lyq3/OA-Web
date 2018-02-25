@@ -16,16 +16,27 @@
 <form class="layui-form">
 	<blockquote class="layui-elem-quote quoteBox">
 		<form class="layui-form">
+
 			<div class="layui-inline">
+				<label class="layui-form-label">日期</label>
+				<div class="layui-input-inline">
+					<input type="text" class="layui-input" id="rq" placeholder="请选择日期">
+				</div>
+			</div>
+
+			<div class="layui-inline">
+				<label class="layui-form-label">文号或标题</label>
 				<div class="layui-input-inline">
 					<input type="text" class="layui-input searchVal" placeholder="请输入搜索的文号或标题" />
 				</div>
-				<a class="layui-btn search_btn" data-type="reload">搜索</a>
 			</div>
-			<div class="layui-inline">
-				<a class="layui-btn layui-btn-normal addNews_btn">添加文章</a>
-			</div>
-			<div class="layui-inline">
+
+
+			<a class="layui-btn search_btn" data-type="reload">搜索</a>
+			<!--<div class="layui-inline">-->
+				<!--<a class="layui-btn layui-btn-normal addNews_btn">添加文章</a>-->
+			<!--</div>-->
+			<div class="layui-inline" style="float: right">
 				<a class="layui-btn layui-btn-danger layui-btn-normal delAll_btn">批量删除</a>
 			</div>
 		</form>
