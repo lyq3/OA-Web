@@ -17,6 +17,7 @@ layui.use(['form','layer','laydate','table','laytpl'],function(){
         limits : [10,15,20,25],
         cols : [[
             // {type: "checkbox", fixed:"left", width:50},
+            {field: 'ID', title: 'ID', hidden:true},
             {field: 'registerStatus', title: '状态', width:80, align:'center',templet:"#registerStatus"},
             {field: 'type', title: '类型', width:80, align:"center"},
             {field: 'registNo', title: '收文号', width:80, align:"center"},
