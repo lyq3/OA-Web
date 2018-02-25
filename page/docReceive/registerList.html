@@ -21,14 +21,14 @@
 					<input type="text" class="layui-input searchVal" placeholder="请输入搜索的收文号" />
 				</div>
 				<div class="layui-input-inline">
-					<select name="column" lay-verify="required">
+					<select id="typeSearch" >
 					<option value="">--全部类型--</option>
 					<option value="1">上行文</option>
 					<option value="2">下行文</option>
 					</select>
 				</div>
 				<div class="layui-input-inline">
-					<select name="column" lay-verify="required">
+					<select id="registerStatusSearch">
 					<option value="">--全部状态--</option>
 					<option value="1">※未办结</option>
 					<option value="2">☆已办结</option>
@@ -36,7 +36,7 @@
 					</select>
 				</div>
 				<div class="layui-input-inline">
-					<select name="column" lay-verify="required">
+					<select id="yearSearch">
 					<option value="">--全部年份--</option>
 					<option value="2011">2011</option>
 					<option value="2012">2012</option>

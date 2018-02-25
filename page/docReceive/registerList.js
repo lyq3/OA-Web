@@ -35,18 +35,22 @@ layui.use(['form','layer','laydate','table','laytpl'],function(){
 
     //搜索【此功能需要后台配合，所以暂时没有动态效果演示】
     $(".search_btn").on("click",function(){
-        if($(".searchVal").val() != ''){
-            table.reload("newsListTable",{
-                page: {
-                    curr: 1 //重新从第 1 页开始
-                },
-                where: {
-                    key: $(".searchVal").val()  //搜索的关键字
-                }
-            })
-        }else{
-            layer.msg("请输入搜索的内容");
+        var param = {}
+        if($(".searchVal").val() !== ''){
+            param.registNo = $(".searchVal").val()
         }
+        if($("#registNo").val() !== ''){
+            param.registNo = $("#registNo").val()
+        }
+        if($("#registerStatusSearch").val() !== ''){
+            param.registerStatus = $("#registerStatusSearch".val()
+        }
+        table.reload("newsListTable",{
+            page: {
+                curr: 1 //重新从第 1 页开始
+            },
+            where: param
+        })
     });
 
     //添加文章
