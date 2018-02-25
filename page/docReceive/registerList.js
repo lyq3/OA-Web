@@ -37,20 +37,20 @@ layui.use(['form','layer','laydate','table','laytpl'],function(){
     $(".search_btn").on("click",function(){
         var param = {}
         if($(".searchVal").val() !== ''){
-            param.registNo = $(".searchVal").val()
+            param.registNo = $(".searchVal").val();
         }
         if($("#registNo").val() !== ''){
-            param.registNo = $("#registNo").val()
+            param.registNo = $("#registNo").val();
         }
         if($("#registerStatusSearch").val() !== ''){
-            param.registerStatus = $("#registerStatusSearch".val()
+            param.registerStatus = $("#registerStatusSearch").val();
         }
         table.reload("newsListTable",{
             page: {
                 curr: 1 //重新从第 1 页开始
             },
             where: param
-        })
+        });
     });
 
     //添加文章
