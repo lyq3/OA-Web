@@ -17,16 +17,17 @@ layui.use(['form','layer','laydate','table','laytpl'],function(){
         limits : [10,15,20,25],
         cols : [[
             // {type: "checkbox", fixed:"left", width:50},
+            {field: 'ID', title: 'ID', hidden:true},
             {field: 'registerStatus', title: '状态', width:80, align:'center',templet:"#registerStatus"},
             {field: 'type', title: '类型', width:80, align:"center"},
             {field: 'registNo', title: '收文号', width:80, align:"center"},
-            {field: 'sponsor', title: '主办单位', width:300},
-            {field: 'sponsorNo', title: '主办号', align:'center', minWidth:150, templet:function(d){
+            {field: 'sponsor', title: '主办单位', width:200},
+            {field: 'sponsorNo', title: '主办号', align:'center', minWidth:200, templet:function(d){
                 return "城工信发（2018）2号";
             }},
             {field: 'registTitle', title: '公文标题',minWidth:350, align:'center'},
             {field: 'registTime', title: '来文时间', align:'center', minWidth:110, templet:function(d){
-                return d.newsTime.substring(0,10);
+                return d.registTime.substring(0,10);
             }},
             {field: 'limitTime', title: '限办时间',minWidth:110, align:'center'},
             {field: 'comments', title: '备注',minWidth:20, align:'center'}
@@ -37,20 +38,20 @@ layui.use(['form','layer','laydate','table','laytpl'],function(){
     $(".search_btn").on("click",function(){
         var param = {}
         if($(".searchVal").val() !== ''){
-            param.registNo = $(".searchVal").val();
+            param.registNo = $(".searchVal").val()
         }
         if($("#registNo").val() !== ''){
-            param.registNo = $("#registNo").val();
+            param.registNo = $("#registNo").val()
         }
         if($("#registerStatusSearch").val() !== ''){
-            param.registerStatus = $("#registerStatusSearch").val();
+            param.registerStatus = $("#registerStatusSearch").val()
         }
         table.reload("newsListTable",{
             page: {
                 curr: 1 //重新从第 1 页开始
             },
             where: param
-        });
+        })
     });
 
     //添加文章
