@@ -198,7 +198,7 @@
         <div class="layui-col-md12" >
             <label class="layui-form-label" ><span style="color: red">* </span>公文标题</label>
             <div class="layui-input-block">
-                <input type="text" name="title" required lay-verify="" placeholder="输入公文标题" autocomplete="off" class="layui-input">
+                <input type="text" name="gwbt" required lay-verify="" value="关于建设社会主义新农村" placeholder="输入公文标题" autocomplete="off" class="layui-input">
             </div>
         </div>
     </div>
@@ -443,13 +443,14 @@
                 initialFrameHeight : 400
             });
             ue.ready(function() {
-                var title=edit_param1.mbmc;
+                var mbmc=edit_param1.mbmc;
+                var title=edit_param2.gwbt;
                 var content1=edit_param2.fwdw+"&nbsp;"+edit_param2.wh+"&nbsp;号";
                 ue.setContent('<h2 style="font-size: 32px; font-weight: bold;  padding: 0px 4px 20px 0px; text-align: center; ">\n' +
                     '    <span style="color: rgb(255, 0, 0); font-family: 宋体, SimSun;">&nbsp;<strong>ल्हासा चेन्गुन जिला शुद्ध भूमि कृषि कं लिमिटेड दस्तावेज</strong></span>\n' +
                     '</h2>\n' +
                     '<h2 style="font-size: 32px; font-weight: bold;  padding: 0px 4px 50px 0px; text-align: center; margin: 0px 0px 20px;">\n' +
-                    '    <span style="color: rgb(255, 0, 0); font-family: 宋体, SimSun;">&nbsp;<strong>'+title+'</strong></span>\n' +
+                    '    <span style="color: rgb(255, 0, 0); font-family: 宋体, SimSun;">&nbsp;<strong>'+mbmc+'</strong></span>\n' +
                     '</h2>\n' +
                     '<h2 style="font-size: 14px;font-weight: bold;margin-top: 10px;border-bottom: 2px solid red;text-align:center;">'+content1+'</h2>\n'+
                     '<p>\n' +
@@ -457,7 +458,16 @@
                     '</p>\n' +
                     '<p>\n' +
                     '    <br/>\n' +
-                    '</p>');
+                    '</p>\n'+
+                     '<h2 style="font-size: 24px;font-weight: bold;text-align:center;">'+title+'</h2>'+
+                    '<p>\n' +
+                    '    <br/>\n' +
+                    '</p>\n'+
+                    '<p>\n' +
+                    '    <br/>\n' +
+                    '</p>\n'+
+                    '<h2 style=""><img  src="../../images/yz.jpeg"></img></h2>'
+                );
             });
         });
 
