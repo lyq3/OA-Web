@@ -26,7 +26,7 @@ layui.use(['form','layer','laydate','table','laytpl'],function(){
             }},
             {field: 'registTitle', title: '公文标题',minWidth:350, align:'center'},
             {field: 'registTime', title: '来文时间', align:'center', minWidth:110, templet:function(d){
-                return d.newsTime.substring(0,10);
+                return d.registTime.substring(0,10);
             }},
             {field: 'limitTime', title: '限办时间',minWidth:110, align:'center'},
             {field: 'comments', title: '备注',minWidth:20, align:'center'}
@@ -43,7 +43,7 @@ layui.use(['form','layer','laydate','table','laytpl'],function(){
             param.registNo = $("#registNo").val()
         }
         if($("#registerStatusSearch").val() !== ''){
-            param.registerStatus = $("#registerStatusSearch".val()
+            param.registerStatus = $("#registerStatusSearch".val())
         }
         table.reload("newsListTable",{
             page: {
