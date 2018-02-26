@@ -18,53 +18,53 @@
   "gongwenguanli": [
     {
       "title": "公文办理",
-      "icon": "&#xe612;",
+      "icon": "&#xe624;",
       "href": "page/user/userList.html",
       "locale":"gongwenbanli",
       "spread": false,
       "children": [
         {
           "title": "待办公文",
-          "icon": "&#xe61c;",
+          "icon": "&#xe63c;",
           "href": "page/news/newsList.html",
           "locale":"daibangongwen",
           "spread": false
         },
         {
           "title": "已办公文",
-          "icon": "&#xe61c;",
+          "icon": "&#xe63c;",
           "href": "page/news/newsList.html",
           "locale":"yibangongwen",
           "spread": false
         },
         {
           "title": "待阅公文",
-          "icon": "&#xe61c;",
+          "icon": "&#xe63c;",
           "href": "page/news/newsList.html",
           "locale":"daiyuegongwen",
           "spread": false
         },
         {
           "title": "待办待填公文",
-          "icon": "&#xe61c;",
+          "icon": "&#xe63c;",
           "href": "page/news/newsList.html",
           "locale":"daibandaitiangongwen",
           "spread": false
         },{
           "title": "已办待填公文",
-          "icon": "&#xe61c;",
+          "icon": "&#xe63c;",
           "href": "page/wait.html",
           "locale":"yibandaitiangongwen",
           "spread": false
         },{
           "title": "已阅公文",
-          "icon": "&#xe61c;",
+          "icon": "&#xe63c;",
           "href": "page/wait.html",
           "locale":"yiyuegongwen",
           "spread": false
         },{
           "title": "拟稿列表",
-          "icon": "&#xe61c;",
+          "icon": "&#xe63c;",
           "href": "page/wait.html",
           "locale":"nigaoliebiao",
           "spread": false
@@ -73,28 +73,28 @@
     },
     {
       "title": "公文起草",
-      "icon": "icon-vip",
+      "icon": "&#xe624;",
       "href": "page/user/userGrade.html",
       "locale":"gongwenqicao",
       "spread": false,
       "children": [
         {
           "title": "新建公文",
-          "icon": "&#xe61c;",
+          "icon": "&#xe63c;",
           "href": "page/documentManage/newDocument.html",
           "locale":"xinjiangongwen",
           "spread": false
         },
         {
           "title": "事务类通知",
-          "icon": "&#xe61c;",
+          "icon": "&#xe63c;",
           "href": "page/wait.html",
           "locale":"shiwuleitongzhi",
           "spread": false
         },
         {
           "title": "快速发文",
-          "icon": "&#xe61c;",
+          "icon": "&#xe63c;",
           "href": "page/documentManage/quicklyRelease.html",
           "locale":"kuaisufawen",
           "spread": false
@@ -103,26 +103,26 @@
     },
     {
       "title": "签收登记",
-      "icon": "icon-vip",
+      "icon": "&#xe624;",
       "href": "page/wait.html",
       "locale": "qianshoudengji",
       "spread": false,
       "children": [
         {
           "title": "未签收列表",
-          "icon": "&#xe61c;",
+          "icon": "&#xe63c;",
           "href": "page/wait.html",
           "locale":"weiqianshouliebiao",
           "spread": false
         },{
           "title": "已签收列表",
-          "icon": "&#xe61c;",
+          "icon": "&#xe63c;",
           "href": "page/wait.html",
           "locale":"yiqianshouliebiao",
           "spread": false
         },{
           "title": "手工登记",
-          "icon": "&#xe61c;",
+          "icon": "&#xe63c;",
           "href": "page/docReceive/registerList.html",
           "locale":"shougongdengji",
           "spread": false
@@ -131,21 +131,21 @@
     },
     {
       "title": "科室收文",
-      "icon": "icon-vip",
+      "icon": "&#xe624;",
       "href": "page/wait.html",
       "locale": "keshishouwen",
       "spread": false,
       "children": [
         {
           "title": "未签收公文",
-          "icon": "&#xe61c;",
+          "icon": "&#xe63c;",
           "href": "page/wait.html",
           "locale":"weiqianshougongwen",
           "spread": false
         },
         {
           "title": "已签收公文",
-          "icon": "&#xe61c;",
+          "icon": "&#xe63c;",
           "href": "page/wait.html",
           "locale":"yiqianshougongwen",
           "spread": false
@@ -154,32 +154,32 @@
     },
     {
       "title": "归档公文",
-      "icon": "icon-vip",
+      "icon": "&#xe624;",
       "href": "page/wait.html",
       "locale": "guidanggongwen",
       "spread": false,
       "children": [
         {
           "title": "待归档发文列表",
-          "icon": "&#xe61c;",
+          "icon": "&#xe63c;",
           "href": "page/wait.html",
           "locale":"daiguidangfawenliebiao",
           "spread": false
         },{
           "title": "待归档收文列表",
-          "icon": "&#xe61c;",
+          "icon": "&#xe63c;",
           "href": "page/wait.html",
           "locale":"daiguidangshouwenliebiao",
           "spread": false
         },{
           "title": "单位归档公文",
-          "icon": "&#xe61c;",
+          "icon": "&#xe63c;",
           "href": "page/wait.html",
           "locale":"danweiguidanggongwen",
           "spread": false
         },{
           "title": "全区域归档公文",
-          "icon": "&#xe61c;",
+          "icon": "&#xe63c;",
           "href": "page/wait.html",
           "locale":"quanquyuguidanggongwen",
           "spread": false
@@ -188,32 +188,32 @@
     },
     {
       "title": "执行监督",
-      "icon": "icon-vip",
+      "icon": "&#xe624;",
       "href": "page/wait.html",
       "locale": "zhixingjiandu",
       "spread": false,
       "children": [
         {
           "title": "来件执行情况",
-          "icon": "&#xe61c;",
+          "icon": "&#xe63c;",
           "href": "page/wait.html",
           "locale":"laijianzhixingqingkuang",
           "spread": false
         },{
           "title": "发件执行情况",
-          "icon": "&#xe61c;",
+          "icon": "&#xe63c;",
           "href": "page/wait.html",
           "locale":"fajianzhixingqingkuang",
           "spread": false
         },{
           "title": "科室执行情况",
-          "icon": "&#xe61c;",
+          "icon": "&#xe63c;",
           "href": "page/wait.html",
           "locale":"keshizhixingqingkuang",
           "spread": false
         },{
           "title": "科室发文执行情况",
-          "icon": "&#xe61c;",
+          "icon": "&#xe63c;",
           "href": "page/wait.html",
           "locale":"keshifawenzhixingqingkuang",
           "spread": false
@@ -222,42 +222,42 @@
     },
     {
       "title": "公文配置",
-      "icon": "icon-vip",
+      "icon": "&#xe624;",
       "href": "page/wait.html",
       "locale": "gongwenpeizhi",
       "spread": false,
       "children": [
         {
           "title": "发文参数配置",
-          "icon": "&#xe61c;",
+          "icon": "&#xe63c;",
           "href": "page/wait.html",
           "locale":"fawencanshupeizhi",
           "spread": false
         },
         {
           "title": "收文参数配置",
-          "icon": "&#xe61c;",
+          "icon": "&#xe63c;",
           "href": "page/wait.html",
           "locale":"shouwencanshupeizhi",
           "spread": false
         },
         {
           "title": "公文资源配置",
-          "icon": "&#xe61c;",
+          "icon": "&#xe63c;",
           "href": "page/wait.html",
           "locale":"gongwenziyuanpeizhi",
           "spread": false
         },
         {
           "title": "个性化配置",
-          "icon": "&#xe61c;",
+          "icon": "&#xe63c;",
           "href": "page/wait.html",
           "locale":"gexinghuapeizhi",
           "spread": false
         },
         {
           "title": "公文档案配置",
-          "icon": "&#xe61c;",
+          "icon": "&#xe63c;",
           "href": "page/wait.html",
           "locale":"gongwendanganpeizhi",
           "spread": false
@@ -287,7 +287,7 @@
   [
     {
       "title": "督查督办",
-      "icon": "&#xe61c;",
+      "icon": "&#xe63c;",
       "href": "page/wait.html",
       "locale":"duchaduban",
       "spread": false
@@ -297,7 +297,7 @@
   [
     {
       "title": "内部论坛",
-      "icon": "&#xe61c;",
+      "icon": "&#xe63c;",
       "href": "page/wait.html",
       "locale":"neibuluntan",
       "spread": false
@@ -307,7 +307,7 @@
   [
     {
       "title": "个人办公",
-      "icon": "&#xe61c;",
+      "icon": "&#xe63c;",
       "href": "page/wait.html",
       "locale":"gerenbangong",
       "spread": false
