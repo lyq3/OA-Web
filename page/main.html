@@ -76,7 +76,7 @@
     <!--</div>-->
 
     <!--&lt;!&ndash;导航&ndash;&gt;-->
-    <!--<a href="./index.html" class="easyui-linkbutton current">办公门户</a>-->
+    <!--<a href="./main.html" class="easyui-linkbutton current">办公门户</a>-->
     <!--<a href="./gwgl.html" class="easyui-linkbutton" >公文管理</a>-->
     <!--<a href="#" class="easyui-linkbutton" >公共信息</a>-->
     <!--<a href="#" class="easyui-linkbutton" >行政办公<span class="badge color-red">15</span></a>-->
@@ -118,11 +118,11 @@
                             <div style="position: static" id="draggable1" class="easyui-draggable">
                                 <div class="easyui-panel " title="待阅公文" style="height:200px;padding:10px;" data-options="iconCls:'icon-save',closable:true,collapsible:true,minimizable:true,maximizable:true">
                                     <i class="iconfont color-teal" style="font-size: 24px">&#xe694;</i>
-                                    <p style="font-size:14px">
+                                    <p style="font-size:14px;font-weight:bold;">
                                         您有没有待阅读公文
                                     </p>
                                     <ul>
-                                        <li>占无公文信息</li>
+                                        <li>暂无公文信息</li>
                                     </ul>
                                 </div>
                             </div>
@@ -132,11 +132,11 @@
                             <div style="position: static" id="draggable2" class="easyui-draggable">
                                 <div class="easyui-panel " title="信息浏览" style="height:200px;padding:10px;" data-options="iconCls:'icon-save',closable:true,collapsible:true,minimizable:true,maximizable:true">
                                     <i class="iconfont color-blue" style="font-size: 24px">&#xe60e;</i>
-                                    <p style="font-size:14px">
+                                    <p style="font-size:14px;font-weight:bold;">
                                         您没有浏览信息
                                     </p>
                                     <ul>
-                                        <li>占无浏览信息</li>
+                                        <li>暂无浏览信息</li>
                                     </ul>
                                 </div>
                             </div>
@@ -146,7 +146,7 @@
                             <div style="position: static" id="draggable3" class="easyui-draggable">
                                 <div class="easyui-panel " title="待办事务" style="height:200px;padding:10px;" data-options="iconCls:'icon-save',closable:true,collapsible:true,minimizable:true,maximizable:true">
                                     <i class="iconfont color-darkblue" style="font-size: 24px">&#xe610;</i>
-                                    <p style="font-size:14px">
+                                    <p style="font-size:14px;font-weight:bold;">
                                         您有待办事务<b style="color: red ">2</b>项
                                     </p>
                                     <span>
@@ -157,6 +157,7 @@
                                             <div class="message_standard_panel">
                                                 <div class="message_standard_content">
                                                     <dl>
+                                                        <span class="badge color-blue">查看</span>
                                                         <dt>用车管理申请单2011033</dt>
                                                         <dd>来自扎西罗布 2018/01/01 00:00</dd>
                                                     </dl>
@@ -167,6 +168,7 @@
                                             <div class="message_standard_panel">
                                                 <div class="message_standard_content">
                                                     <dl>
+                                                        <span class="badge color-blue">查看</span>
                                                         <dt>用车管理申请单20122230</dt>
                                                         <dd>来自扎西罗布 2018/01/01 00:00</dd>
                                                     </dl>
@@ -182,7 +184,7 @@
                             <div style="position: static" id="draggable4" class="easyui-draggable">
                                 <div class="easyui-panel " title="我的邮件" style="height:200px;padding:10px;" data-options="iconCls:'icon-save',closable:true,collapsible:true,minimizable:true,maximizable:true">
                                     <i class="iconfont color-violet" style="font-size: 24px">&#xe68b;</i>
-                                    <p style="font-size:14px">
+                                    <p style="font-size:14px;font-weight:bold;">
                                         您有<b style="color: red ">2</b>封未读邮件
                                     </p>
                                     <ul>
@@ -190,6 +192,7 @@
                                             <div class="message_standard_panel">
                                                 <div class="message_standard_content">
                                                     <dl>
+                                                        <span class="badge color-blue">查看</span>
                                                         <dt>明天有会议</dt>
                                                         <dd>来自扎西罗布 2018/01/01 00:00</dd>
                                                     </dl>
@@ -200,6 +203,7 @@
                                             <div class="message_standard_panel">
                                                 <div class="message_standard_content">
                                                     <dl>
+                                                        <span class="badge color-blue">查看</span>
                                                         <dt>下班后一起打球</dt>
                                                         <dd>来自扎西罗布 2018/01/01 00:00</dd>
                                                     </dl>
@@ -242,7 +246,7 @@
                                         <div class="comment_topic">
                                             <div class="left">
                                                 <i class="iconfont color-red">&#xe62f;</i>
-                                                <b>全力构建社会主义和兴价值观</b>
+                                                <b style="font-size: 18px;width: 300px" id="topic"></b>
                                                 <!--<span>社会主义和兴价值观内容</span>-->
                                             </div>
                                             <div class="right">
@@ -259,29 +263,28 @@
                                                 </ul>
                                             </div>
                                         </div>
-                                        <div class="comment_content">
-                                            富强、民主、文明、和谐，自由、平等、公正、法治，爱国、敬业、诚信、友善。
+                                        <div class="comment_content" style="font-size: 16px" id="content">
                                         </div>
-                                        <div class="comment_images">
-                                            <ul>
-                                                <li><img style="height: 200px;width: 300px" src="./dist/1ee8b2fec126c5983e3e5c41784e3af3.jpg"></li>
-                                            </ul>
+                                        <div class="comment_images" id="pic">
                                         </div>
 
-                                        <div class="comment_publisher">
-                                            <div class="left">
-                                                <img src="./dist/3173987d13db0b9b816ec77f8514dd4d.png">
-                                                <dl>
-                                                    <dt>扎西罗布</dt>
-                                                    <dd>超级管理员</dd>
-                                                </dl>
+                                        <div class="comment_publisher">                                                                                                                                             d
+                                            <div class="left" id="prePage">
+                                              <i class="iconfont" style="font-size: 15px">&#xe679;前一页</i>
+
+                                                <!--<img src="./plugin/insdep/plus/comment/images/portrait_250x250.png">-->
+                                                <!--<dl>-->
+                                                    <!--<dt>扎西罗布</dt>-->
+                                                    <!--<dd>超级管理员</dd>-->
+                                                <!--</dl>-->
                                             </div>
-                                            <div class="right">
-                                                <ul>
-                                                    <li><span class="badge color-yellow">官方</span></li>
-                                                    <li><span class="badge color-blue">原创</span></li>
-                                                    <li><span class="badge color-green">企业认证</span></li>
-                                                </ul>
+                                            <div class="right" id="nextPage">
+                                                <i class="iconfont" style="font-size: 15px">后一页&#xe6a3;</i>
+                                                <!--<ul>-->
+                                                    <!--<li><span class="badge color-yellow">官方</span></li>-->
+                                                    <!--<li><span class="badge color-blue">原创</span></li>-->
+                                                    <!--<li><span class="badge color-green">企业认证</span></li>-->
+                                                <!--</ul>-->
                                             </div>
                                         </div>
 
@@ -336,11 +339,11 @@
                             <div id="draggable7" style="position: static" class="easyui-draggable">
                                 <div class="easyui-panel " title="我的会议" style="height:200px;padding:10px;" data-options="iconCls:'icon-save',closable:true,collapsible:true,minimizable:true,maximizable:true">
                                     <i class="iconfont color-red" style="font-size: 24px">&#xe62f;</i>
-                                    <p style="font-size:14px">
+                                    <p style="font-size:14px;font-weight:bold;">
                                         您没有会议受邀
                                     </p>
                                     <ul>
-                                        <li>占无会议信息</li>
+                                        <li>暂无会议信息</li>
                                     </ul>
                                 </div>
                             </div>
@@ -350,7 +353,7 @@
                             <div id="draggable8" style="position: static" class="easyui-draggable">
                                 <div class="easyui-panel  panel-bar-green" title="信息管理" style="height:200px;padding:10px;" data-options="iconCls:'icon-save',closable:true,collapsible:true,minimizable:true,maximizable:true">
                                     <i class="iconfont color-olive" style="font-size:24px">&#xe6c1;</i>
-                                    <p style="font-size:14px">
+                                    <p style="font-size:14px;font-weight:bold;">
                                         本月共享的信息<b style="color: red ">24</b>条
                                     </p>
                                     <ul>
@@ -358,7 +361,8 @@
                                             <div class="message_standard_panel">
                                                 <div class="message_standard_content">
                                                     <dl>
-                                                        <dt>2017年是美好的一年</dt>
+                                                        <span class="badge color-blue">查看</span>
+                                                        <dt>近期工作总结</dt>
                                                         <dd>来自扎西罗布 2018/01/01 00:00</dd>
                                                     </dl>
                                                 </div>
@@ -368,8 +372,9 @@
                                             <div class="message_standard_panel">
                                                 <div class="message_standard_content">
                                                     <dl>
-                                                        <dt>2017年是美好的一年</dt>
-                                                        <dd>来自扎西罗布 2018/01/01 00:00</dd>
+                                                        <span class="badge color-blue">查看</span>
+                                                        <dt>团队建设</dt>
+                                                        <dd>来自扎西罗布 2018/02/01 00:00</dd>
                                                     </dl>
                                                 </div>
                                             </div>
@@ -378,7 +383,8 @@
                                             <div class="message_standard_panel">
                                                 <div class="message_standard_content">
                                                     <dl>
-                                                        <dt>2017年是美好的一年</dt>
+                                                        <span class="badge color-blue">查看</span>
+                                                        <dt>来月工作安排</dt>
                                                         <dd>来自扎西罗布 2018/01/01 00:00</dd>
                                                     </dl>
                                                 </div>
@@ -393,11 +399,11 @@
                             <div id="draggable9" style="position: static" class="easyui-draggable">
                                 <div class="easyui-panel " title="工作状态" style="height:200px;padding:10px;" data-options="iconCls:'icon-save',closable:true,collapsible:true,minimizable:true,maximizable:true">
                                     <i class="iconfont color-yellow" style="font-size: 24px">&#xe602;</i>
-                                    <p style="font-size:14px">
+                                    <p style="font-size:14px;font-weight:bold;">
                                         您有未有工作状态信息
                                     </p>
                                     <ul>
-                                        <li>占无工作状态信息</li>
+                                        <li>暂无工作状态信息</li>
                                     </ul>
                                 </div>
                             </div>
@@ -431,7 +437,7 @@
                         <a href="javascript:void(0)" class="easyui-linkbutton" onclick="$('#w').window('open')">确定</a>
                         <a href="javascript:void(0)" class="easyui-linkbutton" onclick="$('#w').window('close')">取消</a>
                     </div>
-                    <div id="w" class="easyui-window" title="选择模块" data-options="iconCls:'icon-save'" style="width:500px;height:500px;padding:5px;">
+                    <div id="w" class="easyui-window" title="选择模块" data-options="iconCls:'icon-save',closed:true" style="width:500px;height:500px;padding:5px;">
 
                         <div class="easyui-layout" data-options="fit:true">
                             <div data-options="region:'center'" style="padding:10px;">
