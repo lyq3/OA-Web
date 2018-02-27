@@ -1,6 +1,7 @@
 layui.use(['form','layer','laydate','table','laytpl'],function(){
     var form = layui.form,
-        layer = parent.layer === undefined ? layui.layer : top.layer,
+        // layer = parent.layer === undefined ? layui.layer : top.layer,
+        layer = layui.layer,
         $ = layui.jquery,
         laydate = layui.laydate,
         laytpl = layui.laytpl,
@@ -162,7 +163,7 @@ layui.use(['form','layer','laydate','table','laytpl'],function(){
                 shade: false,
                 maxmin: true, //开启最大化最小化按钮
                 area: ['893px', '600px'],
-                content: '../document/showDocument.html'
+                content: '/page/document/showDocument.html'
             });
         }
     });
