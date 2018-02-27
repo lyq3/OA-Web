@@ -111,19 +111,19 @@
         {
           "title": "未签收列表",
           "icon": "&#xe63c;",
-          "href": "page/wait.html",
+          "href": "page/docReceive/registerList.html",
           "locale":"weiqianshouliebiao",
           "spread": false
         },{
           "title": "已签收列表",
           "icon": "&#xe63c;",
-          "href": "page/wait.html",
+          "href": "page/docReceive/registerList.html",
           "locale":"yiqianshouliebiao",
           "spread": false
         },{
           "title": "手工登记",
           "icon": "&#xe63c;",
-          "href": "page/docReceive/registerList.html",
+          "href": "page/docReceive/registerForm.html",
           "locale":"shougongdengji",
           "spread": false
         }

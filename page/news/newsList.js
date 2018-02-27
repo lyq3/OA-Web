@@ -26,7 +26,7 @@ layui.use(['form','layer','laydate','table','laytpl'],function(){
             {field: 'newsId', title: 'ID', width:60, align:"center"},
             {field: 'user', title: '接收部门',  align:"center"},
             {field: 'newsStatus', title: '办理状态',  align:'center',templet:"#newsStatus"},
-            {field: 'newsName', title: '公文标题', width:240},
+            {field: 'newsName',event: 'newsName', title: '公文标题', width:240},
             {field: 'newsWh', title: '文号', align:'center', minWidth:210, templet:function(d){
                 return "城工信发（2018）2号";
             }},
@@ -41,6 +41,8 @@ layui.use(['form','layer','laydate','table','laytpl'],function(){
             {title: '操作', width:170, templet:'#newsListBar',fixed:"right",align:"center"}
         ]]
     });
+
+
 
     //是否置顶
     form.on('switch(newsTop)', function(data){
@@ -146,6 +148,22 @@ layui.use(['form','layer','laydate','table','laytpl'],function(){
             });
         } else if(layEvent === 'look'){ //预览
             layer.alert("此功能需要前台展示，实际开发中传入对应的必要参数进行文章内容页面访问")
+        }
+    });
+
+    //监听单元格事件，单击标题打开详情页面
+    table.on('tool(newsList)', function(obj){
+        var data = obj.data;
+        if(obj.event === 'newsName'){
+            layer.open({
+                type: 2,
+                title: data.newsName,
+                shadeClose: true,
+                shade: false,
+                maxmin: true, //开启最大化最小化按钮
+                area: ['893px', '600px'],
+                content: '../document/showDocument.html'
+            });
         }
     });
 
