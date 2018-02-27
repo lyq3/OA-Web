@@ -132,7 +132,6 @@ layui.use(['form','layer','laydate','table','laytpl'],function(){
 
     //列表操作
     table.on('tool(newsList)', function(obj){
-        alert("ss")
         var layEvent = obj.event,
             data = obj.data;
 
