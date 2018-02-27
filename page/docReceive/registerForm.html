@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>手工登记</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="../../layui/css/layui.css" media="all" />
+    <link rel="stylesheet" href="../../css/public.css" media="all" />
+    <style>
+        .top-btn {
+            /*margin-top: 10px;*/
+            margin-left: 10px;
+            /*float: right;*/
+        }
+    </style>
+</head>
+<body style="overflow-x: hidden">
+<!--保存按钮-->
+<div style="float: right;margin-right: 20px;position:fixed;right: 20px;top: 50px;z-index: 9999">
+    <button id="saveOfficial" class="layui-btn layui-btn-normal top-btn">保存</button>
+    <button id="commitOfficial" class="layui-btn top-btn">提交</button>
+</div>
+<!--&lt;!&ndash;<div style="margin-left: 20px">模板选择<hr style="margin: 0" class="layui-bg-blue"></div>&ndash;&gt;-->
+<!--<blockquote class="layui-elem-quote" style="margin-left: 20px;line-height: 10px;margin-top: 5px">模板选择</blockquote>-->
+<!--&lt;!&ndash;表单1&ndash;&gt;-->
+<!--<div class="layui-form layui-form-pane" >-->
+    <!--<div class="layui-row layui-col-space20" style="margin-top: 5px;margin-left: 20px">-->
+        <!--<div class="layui-col-md4" >-->
+            <!--<div class="layui-form-item">-->
+                <!--<label class="layui-form-label" >公文模板</label>-->
+                <!--<div class="layui-input-block">-->
+                    <!--<select name="mbmc" lay-verify="" >-->
+                        <!--<option value="城关区净土农业发展有限公司">城&nbsp;关&nbsp;区&nbsp;净&nbsp;土&nbsp;农&nbsp;业&nbsp;发&nbsp;展&nbsp;有&nbsp;限&nbsp;公&nbsp;司</option>-->
+                        <!--<option value="城关区安全生产委员会">城&nbsp;关&nbsp;区&nbsp;安&nbsp;全&nbsp;生&nbsp;产&nbsp;委&nbsp;员&nbsp;会</option>-->
+                        <!--<option value="城关区文广局简报">城&nbsp;关&nbsp;区&nbsp;文&nbsp;广&nbsp;局&nbsp;简&nbsp;报</option>-->
+                        <!--<option value="城关区文广局文件">城&nbsp;关&nbsp;区&nbsp;文&nbsp;广&nbsp;局&nbsp;文&nbsp;件</option>-->
+                        <!--<option value="科技局文件">科&nbsp;技&nbsp;局&nbsp;文&nbsp;件</option>-->
+                    <!--</select>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="layui-col-md4">-->
+            <!--<div class="layui-form-item">-->
+                <!--<label class="layui-form-label" >版记模板</label>-->
+                <!--<div class="layui-input-block">-->
+                    <!--<select name="city" lay-verify="" >-->
+                        <!--<option value="0">版记模板</option>-->
+                    <!--</select>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+    <!--<div class="layui-row layui-col-space20" style="margin-top: 5px;margin-left: 20px">-->
+        <!--<div class="layui-col-md4">-->
+            <!--<div class="layui-form-item" >-->
+                <!--<label class="layui-form-label" >分发对象</label>-->
+                <!--<div class="layui-input-block">-->
+                    <!--&lt;!&ndash;<div style="border: 1px solid #E6E6E6;width: 100%"></div>&ndash;&gt;-->
+                    <!--<input id="ffdx" readonly="readonly" type="text" name="title" required lay-verify="" placeholder="单击选择发送人" autocomplete="off" class="layui-input">-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="layui-col-md4">-->
+            <!--<div class="layui-form-item ">-->
+                <!--<label class="layui-form-label" >其他</label>-->
+                <!--<div class="layui-input-block" style="border: 1px solid #E6E6E6">-->
+                    <!--<input type="checkbox" name="" title="短信提醒" lay-skin="primary">-->
+                    <!--<div id="blsx" class="layui-inline">-->
+                        <!--<input  type="checkbox" name="blsx" value="1" title="办理时限" lay-skin="primary">-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="layui-col-md4" id = "hideRqfw" style="display: none">-->
+            <!--<div class="layui-form-item ">-->
+                <!--<div class="layui-inline">-->
+                    <!--<label class="layui-form-label">日期范围</label>-->
+                    <!--<div class="layui-input-inline">-->
+                        <!--<input type="text" class="layui-input" id="rqfw" placeholder=" - ">-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+    <!--<button id="createEdit3" style="height: 0;width: 0" lay-submit lay-filter="createEdit3" ></button>-->
+<!--</div>-->
+
+
+<blockquote class="layui-elem-quote" style="margin-left: 20px;line-height: 10px">手工登记</blockquote>
+
+<!--正文-->
+<div class="layui-form" style="margin: 0 100px;padding-right:5px;border-left: 1px solid silver;border-right: 1px solid silver">
+    <!--&lt;!&ndash;标题&ndash;&gt;-->
+    <!--<div class="layui-row layui-col-space10">-->
+        <!--<div class="layui-col-md2" ></div>-->
+        <!--<div class="layui-col-md6" >-->
+            <!--<div >-->
+                <!--<div class="layui-form-item">-->
+                    <!--<div class="layui-input-block">-->
+                        <!--<select name="city" lay-verify="" >-->
+                            <!--<option value="0">版记模板</option>-->
+                        <!--</select>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--&lt;!&ndash;<div class="layui-col-md4" ></div>&ndash;&gt;-->
+    <!--</div>-->
+    <!--文种-->
+    <div class="layui-row layui-col-space20" style="margin-top: 5px;margin-left: 0px">
+        <div class="layui-col-md4" >
+            <div class="layui-form-item">
+                <label class="layui-form-label" >来文分类</label>
+                <div class="layui-input-block">
+                    <select name="mbmc" lay-verify="" >
+                        <option value="城工信发文 [2018]">城工信发文</option>>
+                        <option value="城委办 [2018]">城委办</option>>
+                        <option value="城人大办 [2018]">城人大办</option>>
+                        <option value="城人大办 [2018]">城人大办</option>>
+                        <option value="城党组发 [2018]">城党组发</option>>
+                        <option value="城政 [2018]">城政</option>>
+                        <option value="城政复 [2018]">城政复</option>>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="layui-col-md3">
+            <div class="layui-form-item">
+                <label class="layui-form-label" >收文序号</label>
+                <div class="layui-input-block">
+                    <input style="width: 70%" type="text" name="whrq" class="layui-input" id="whrq" placeholder="请选择日期">
+                </div>
+            </div>
+        </div>
+        <div class="layui-col-md2" >
+            <div class="layui-input-block"style="position: relative;right: 100px;">
+                <input  type="text" name="wh" required lay-verify="number" value="8" autocomplete="off" class="layui-input">
+                <span style="position: relative;top:-30px;left: 60px">号</span>
+            </div>
+        </div>
+    </div>
+    <div class="layui-row layui-col-space20" style="margin-top: 5px;margin-left: 0px">
+        <div class="layui-col-md4" >
+            <div class="layui-form-item">
+                <label class="layui-form-label" >来文单位</label>
+                <div class="layui-input-block">
+                    <select name="fwdw" lay-verify="" >
+                        <option value="城工信发文 [2018]">市政府（办公室）</option>>
+                        <option value="城委办 [2018]">城委办</option>>
+                        <option value="城人大办 [2018]">城人大办</option>>
+                        <option value="城人大办 [2018]">城人大办</option>>
+                        <option value="城党组发 [2018]">城党组发</option>>
+                        <option value="城政 [2018]">城政</option>>
+                        <option value="城政复 [2018]">城政复</option>>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="layui-col-md4">
+            <div class="layui-form-item">
+                <label class="layui-form-label" >原文编号</label>
+                <div class="layui-input-block">
+                    <input  type="text" name="wh" required lay-verify="number" value="宿政办（2011）2号" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="layui-row layui-col-space20" style="margin-top: 5px;margin-left: 0px">
+        <div class="layui-col-md8">
+            <div class="layui-form-item">
+                <label class="layui-form-label" >来文标题</label>
+                <div class="layui-input-block">
+                    <input  type="text" name="wh" required lay-verify="number" value="宿州电子政务平台发文测试" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="layui-row layui-col-space20" style="margin-top: 5px;margin-left: 0px">
+        <div class="layui-col-md4" >
+            <label class="layui-form-label" ><span style="color: red">* </span>办理情况</label>
+            <div class="layui-input-block">
+                <select name="fwdw" lay-verify="" >
+                    <option value="0">未办理</option>
+                    <option value="1">已办理</option>
+                </select>
+            </div>
+        </div>
+        <div class="layui-col-md4" >
+            <label class="layui-form-label" ><span style="color: red">* </span>签发日期</label>
+            <div class="layui-input-block">
+                <input type="text" class="layui-input" id="qfrq">
+            </div>
+        </div>
+    </div>
+    <div class="layui-row layui-col-space20" style="margin-top: 5px;margin-left: 0px">
+        <div class="layui-col-md4" >
+            <label class="layui-form-label" ><span style="color: red">* </span>紧急情况</label>
+            <div class="layui-input-block">
+                <select name="fwdw" lay-verify="" >
+                    <option value="0">普通</option>
+                    <option value="1">紧急</option>
+                </select>
+            </div>
+        </div>
+        <div class="layui-col-md4" >
+            <label class="layui-form-label" ><span style="color: red">* </span>办理日期</label>
+            <div class="layui-input-block">
+                <input type="text" class="layui-input" >
+            </div>
+        </div>
+    </div>
+    <div class="layui-row layui-col-space20" style="margin-top: 5px;margin-left: 0px">
+        <div class="layui-col-md4" >
+            <div class="layui-form-item" >
+                <label class="layui-form-label">办件性质</label>
+                <div class="layui-input-block">
+                    <input type="radio" name="sex" value="传阅件" title="传阅件">
+                    <input type="radio" name="sex" value="办理件" title="办理件" checked>
+                </div>
+            </div>
+        </div>
+        <div class="layui-col-md4" >
+            <label class="layui-form-label" >承办人</label>
+            <div class="layui-input-block">
+                <select name="qfr" lay-verify="" >
+                    <option value="扎西罗布">扎西罗布</option>
+                    <option value="卓木强巴]">卓木强巴</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="layui-row layui-col-space20" style="margin-top: 5px;margin-left: 0px">
+        <div class="layui-col-md10">
+            <div class="layui-form-item" >
+                <label class="layui-form-label" >分发对象</label>
+                <div class="layui-input-block">
+                    <input id="ffdx" readonly="readonly" type="text" name="title" required lay-verify="" placeholder="单击选择发送人" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="layui-row layui-col-space20" style="margin-top: 5px;margin-left: 0px">
+        <div class="layui-col-md10">
+            <label class="layui-form-label" >来文列表</label>
+            <div class="layui-input-block">
+                <input  type="text" name="wh" required lay-verify="number" value="" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+    </div>
+    <div class="layui-row layui-col-space20" style="margin-top: 5px;margin-left: 0px">
+        <div class="layui-col-md10">
+            <label class="layui-form-label">备注</label>
+            <div class="layui-input-block">
+                <textarea name="desc" placeholder="" class="layui-textarea"></textarea>
+            </div>
+        </div>
+    </div>
+    <!--附件-->
+    <div class="layui-row layui-col-space5">
+        <div class="layui-col-md4" >
+            <label class="layui-form-label" >附件</label>
+            <div class="layui-input-inline">
+                <button  type="button" class="layui-btn layui-btn-normal layui-btn-sm" id="sc">
+                    <i class="layui-icon">&#xe62f;</i>上传
+                </button>
+            </div>
+            <div class="layui-input-inline">
+                <button  type="button" class="layui-btn layui-btn-normal layui-btn-sm" id="sc1">
+                    <i class="layui-icon">&#xe640;</i>删除
+                </button>
+            </div>
+            <div class="layui-input-inline">
+                <button  type="button" class="layui-btn layui-btn-normal layui-btn-sm" id="sc2">
+                    <i class="layui-icon">&#xe601;</i>下载
+                </button>
+            </div>
+        </div>
+    </div>
+    <button id="createEdit2" style="height: 0;width: 0" lay-submit lay-filter="createEdit2" ></button>
+</div>
+<!--公文编辑区-->
+<!-- 加载编辑器的容器 -->
+<!-- 配置文件 -->
+<script type="text/javascript" src="../../plug/ueditor1.4.3/ueditor.config.js"></script>
+<!-- 编辑器源码文件 -->
+<script type="text/javascript" src="../../plug/ueditor1.4.3/ueditor.all.js"></script>
+
+<script type="text/javascript">
+
+</script>
+</body>
+<!--[if lt IE 9]>
+<script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+<script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+<script type="text/javascript" src="../../layui/layui.js"></script>
+<script type="text/javascript" src="../../js/main.js"></script>
+<script>
+    var ffdx = ''//用于存放选择的Ffdx
+    layui.use(['laydate','upload','util','layer','form','tree'], function(){
+        var form = layui.form;
+        var laydate = layui.laydate;
+        var upload = layui.upload;
+        var util = layui.util;
+        var layer = layui.layer;
+        var tree=layui.tree;
+        var $ = layui.jquery;
+        //执行
+        util.fixbar({
+            bar1:"顶"
+            ,click: function(type){
+                console.log(type);
+                if(type === 'bar1'){
+                   console.log('点击了bar1')
+                }
+            }
+        });
+        tree({
+            elem: '#zsjg' //传入元素选择器
+            ,nodes: [{ //节点
+                name: '城关区'
+                ,children: [{
+                    name: '区直单位'
+                    ,children: [{
+                      name:  '区委办',
+                    },{
+                        name:  '人大办',
+                    },{
+                        name:  '政府办',
+                    },{
+                        name:  '政协办',
+                    },{
+                        name:  '纪检办',
+                    }]
+                },{
+                    name: '政府各部门'
+                    ,children: [{
+                        name:  '审计局',
+                    },{
+                        name:  '发改委',
+                    },{
+                        name:  '财政局',
+                    },{
+                        name:  '商务局',
+                    },{
+                        name:  '教育局',
+                    }]
+                }]
+            }],click: function(node){
+                $("input[name='zsjg']").val(node.name);
+            }
+        });
+        tree({
+            elem: '#csjg' //传入元素选择器
+            ,nodes: [{ //节点
+                name: '城关区'
+                ,children: [{
+                    name: '区直单位'
+                    ,children: [{
+                        name:  '区委办',
+                    },{
+                        name:  '人大办',
+                    },{
+                        name:  '政府办',
+                    },{
+                        name:  '政协办',
+                    },{
+                        name:  '纪检办',
+                    }]
+                },{
+                    name: '政府各部门'
+                    ,children: [{
+                        name:  '审计局',
+                    },{
+                        name:  '发改委',
+                    },{
+                        name:  '财政局',
+                    },{
+                        name:  '商务局',
+                    },{
+                        name:  '教育局',
+                    }]
+                }]
+            }]
+            ,click: function(node){
+                $("input[name='csjg']").val(node.name);
+            }
+        });
+        tree({
+            elem: '#ngbm' //传入元素选择器
+            ,nodes: [{ //节点
+                name: '城关区'
+                ,children: [{
+                    name: '区直单位'
+                    ,children: [{
+                        name:  '区委办',
+                    },{
+                        name:  '人大办',
+                    },{
+                        name:  '政府办',
+                    },{
+                        name:  '政协办',
+                    },{
+                        name:  '纪检办',
+                    }]
+                },{
+                    name: '政府各部门'
+                    ,children: [{
+                        name:  '审计局',
+                    },{
+                        name:  '发改委',
+                    },{
+                        name:  '财政局',
+                    },{
+                        name:  '商务局',
+                    },{
+                        name:  '教育局',
+                    }]
+                }]
+            }]
+            ,click: function(node){
+                $("input[name='ngbm']").val(node.name);
+            }
+        });
+        //签发日期
+        laydate.render({
+            elem: '#qfrq', //指定元素
+            theme:'#1E9FFF',
+            calendar: true,
+            value: "2011-12-13"
+        });
+        //起草日期
+        laydate.render({
+            elem: '#qcrq', //指定元素
+            theme:'#1E9FFF',
+            calendar: true,
+            value: new Date()
+        });
+        //印发日期
+        laydate.render({
+            elem: '#yfrq', //指定元素
+            theme:'#1E9FFF',
+            calendar: true,
+            value: new Date()
+        });
+        //日期范围
+        laydate.render({
+            elem: '#rqfw'
+            ,range: true
+        });
+        //文件日期
+        laydate.render({
+            elem: '#whrq',
+            type: 'year',
+            value:2018
+        });
+        //执行实例
+        var uploadInst = upload.render({
+            elem: '#sc' //绑定元素
+            ,url: '/upload/' //上传接口
+            ,done: function(res){
+                //上传完毕回调
+            }
+            ,error: function(){
+                //请求异常回调
+            }
+        });
+
+        //保存 提交按钮单击
+        $(function(){
+            $("#saveOfficial").click(function(){
+                layer.msg("保存成功，仅为演示");
+            });
+            $("#commitOfficial").click(function(){
+                layer.confirm('是否提交公文?', {
+                    btn: ['提交','放弃'], //按钮
+                    icon : 3
+                }, function(){
+                    layer.msg('提交成功，仅为演示', {icon: 1});
+                }, function(){
+                    layer.msg('取消后会顺便将公文保存但不会提交', {
+                        time: 20000, //20s后自动关闭
+                        btn: ['明白了', '原来如此']
+                    });
+                });
+            });
+
+        })
+
+        var edit_param1;
+        var edit_param2;
+
+        form.on('submit(createEdit3)', function(data){
+            edit_param1=$.parseJSON(JSON.stringify(data.field));
+            return false;
+        });
+        form.on('submit(createEdit2)', function(data){
+            edit_param2=$.parseJSON(JSON.stringify(data.field));
+            return false;
+        });
+
+        $("#createEdit").on("click",function () {
+            $("#createEdit2").trigger('click');
+            $("#createEdit3").trigger('click');
+            //实例化编辑器
+            var ue = UE.getEditor('container',{
+                initialFrameHeight : 400
+            });
+            ue.ready(function() {
+                var mbmc=edit_param1.mbmc;
+                var title=edit_param2.gwbt;
+                var content1=edit_param2.fwdw+"&nbsp;"+edit_param2.wh+"&nbsp;号";
+                var yz=edit_param2.yz;
+                ue.setContent('<h2 style="font-size: 32px; font-weight: bold;  padding: 0px 4px 20px 0px; text-align: center; ">\n' +
+                    '    <span style="color: rgb(255, 0, 0); font-family: 宋体, SimSun;">&nbsp;<strong>ल्हासा चेन्गुन जिला शुद्ध भूमि कृषि कं लिमिटेड दस्तावेज</strong></span>\n' +
+                    '</h2>\n' +
+                    '<h2 style="font-size: 32px; font-weight: bold;  padding: 0px 4px 50px 0px; text-align: center; margin: 0px 0px 20px;">\n' +
+                    '    <span style="color: rgb(255, 0, 0); font-family: 宋体, SimSun;">&nbsp;<strong>'+mbmc+'</strong></span>\n' +
+                    '</h2>\n' +
+                    '<h2 style="font-size: 14px;font-weight: bold;margin-top: 10px;border-bottom: 2px solid red;text-align:center;">'+content1+'</h2>\n'+
+                    '<p>\n' +
+                    '    <span style="color: rgb(255, 0, 0); font-family: 宋体, SimSun;"><strong><br/></strong></span>\n' +
+                    '</p>\n' +
+                    '<p>\n' +
+                    '    <br/>\n' +
+                    '</p>\n'+
+                    '<h2 style="font-size: 24px;font-weight: bold;text-align:center;">'+title+'</h2>'+
+                    '<p>\n' +
+                    '    <br/>\n' +
+                    '</p>\n'+
+                    '<p>\n' +
+                    '    <br/>\n' +
+                    '</p>\n'+
+                    '<p style="float: right"><img  src="'+yz+'"></img></p>'
+            );
+            });
+        });
+
+
+        //选择分发对象
+        $("#ffdx").click(function(){
+            layer.open({
+                title:'选择分发对象',
+                type: 2,
+                area: ['700px', '450px'],
+                fixed: false, //不固定
+                maxmin: true,
+                btn :['确认','取消'],
+                content: '../documentManage/selectFfdx.html?parm='+$("#ffdx").val(),
+                yes : function(index){
+                    $("#ffdx").val(ffdx);
+                    layer.close(index);
+                }
+            });
+        })
+
+        //办理时限
+        $("#blsx").click(function(){
+            var isCheck = $('#blsx input').is(":checked");
+            if(!isCheck){
+                $('#hideRqfw').css('display', 'none')
+            }else {
+                $('#hideRqfw').css('display', '')
+            }
+        })
+    });
+
+    //父子操作方法
+    function addFfdx(parm) {
+        ffdx = parm;
+    }
+
+</script>
