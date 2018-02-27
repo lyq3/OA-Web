@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>文章列表--layui后台管理模板 2.0</title>
+	<meta name="renderer" content="webkit">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="format-detection" content="telephone=no">
+	<link rel="stylesheet" href="../../layui/css/layui.css" media="all" />
+	<link rel="stylesheet" href="../../css/public.css" media="all" />
+</head>
+<body class="childrenBody">
+<form class="layui-form">
+	<blockquote class="layui-elem-quote quoteBox">
+		<form class="layui-form">
+			<div class="layui-inline">
+				<div class="layui-input-inline">
+					<input type="text" class="layui-input searchVal" placeholder="请输入搜索的收文号" />
+				</div>
+				<div class="layui-input-inline">
+					<select id="typeSearch" >
+					<option value="">--全部类型--</option>
+					<option value="1">上行文</option>
+					<option value="2">下行文</option>
+					</select>
+				</div>
+				<div class="layui-input-inline">
+					<select id="registerStatusSearch">
+					<option value="">--全部状态--</option>
+					<option value="1">※未办结</option>
+					<option value="2">☆已办结</option>
+					<option value="0">★待归档</option>
+					</select>
+				</div>
+				<div class="layui-input-inline">
+					<select id="yearSearch">
+					<option value="">--全部年份--</option>
+					<option value="2011">2011</option>
+					<option value="2012">2012</option>
+					<option value="2013">2013</option>
+					<option value="2014">2014</option>
+					<option value="2015">2015</option>
+					<option value="2016">2016</option>
+					<option value="2017">2017</option>
+					<option value="2018">2018</option>
+					</select>
+				</div>
+				<a class="layui-btn search_btn" data-type="reload">搜索</a>
+			</div>
+			<!--<div class="layui-inline">-->
+				<!--<a class="layui-btn layui-btn-normal addNews_btn">添加文章</a>-->
+			<!--</div>-->
+			<!--<div class="layui-inline">-->
+				<!--<a class="layui-btn layui-btn-danger layui-btn-normal delAll_btn">批量删除</a>-->
+			<!--</div>-->
+			<div class="layui-inline">
+				<span>符号状态说明:※未办结☆已办结★待归档</span>
+			</div>
+		</form>
+	</blockquote>
+	<table id="registerList" lay-filter="registerList"></table>
+	<!--审核状态-->
+	<script type="text/html" id="registerStatus">
+		{{#  if(d.registerStatus == "1"){ }}
+		<span>※</span>
+		{{#  } else if(d.registerStatus == "2"){ }}
+		<span>☆</span>
+		{{#  } else { }}
+		<span>★</span>
+		{{#  }}}
+	</script>
+
+	<!--操作-->
+	<!--<script type="text/html" id="newsListBar">-->
+		<!--<a class="layui-btn layui-btn-xs layui-btn-normal" lay-event="edit">编辑</a>-->
+		<!--<a class="layui-btn layui-btn-xs layui-btn-warm" lay-event="look">退回</a>-->
+		<!--<a class="layui-btn layui-btn-xs layui-btn-danger" lay-event="del">删除</a>-->
+	<!--</script>-->
+</form>
+<script type="text/javascript" src="../../layui/layui.js"></script>
+<script type="text/javascript" src="registerList2.js"></script>
+</body>
+</html>

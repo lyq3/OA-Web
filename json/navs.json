@@ -111,7 +111,7 @@
         {
           "title": "未签收列表",
           "icon": "&#xe63c;",
-          "href": "page/docReceive/registerList.html",
+          "href": "page/docReceive/registerList2.html",
           "locale":"weiqianshouliebiao",
           "spread": false
         },{
