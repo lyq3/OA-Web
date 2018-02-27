@@ -148,15 +148,17 @@
 
         <div class="layui-col-md4">
             <label class="layui-form-label">日期</label>
-            <div class="layui-input-inline">
-                <input type="text" name="whrq" class="layui-input" id="whrq" placeholder="请选择日期">
+            <div class="layui-input-inline" >
+                <input style="width: 70%" type="text" name="whrq" class="layui-input" id="whrq" placeholder="请选择日期">
             </div>
         </div>
         <div class="layui-col-md2" >
-            <label class="layui-form-label">号</label>
-            <div class="layui-input-block">
-                <input type="text" name="wh" required lay-verify="number" value="1" autocomplete="off" class="layui-input">
+            <div class="layui-input-block"style="position: relative;right: 100px;">
+                  <input  type="text" name="wh" required lay-verify="number" value="1" autocomplete="off" class="layui-input">
+                <span style="position: relative;top:-30px;left: 50px">号</span>
             </div>
+
+
         </div>
         <!--<div class="layui-col-md4" >-->
         <!--<label class="layui-form-label" >其他</label>-->
@@ -169,11 +171,14 @@
     </div>
 
     <!--签发人-->
-    <div class="layui-row layui-col-space10">
-        <div class="layui-col-md4" >
+    <div class="layui-row layui-col-space5">
+        <div class="layui-col-md6" >
             <label class="layui-form-label" >签发人</label>
             <div class="layui-input-block">
-                <input type="text" name="title" required lay-verify="" value="管理员" autocomplete="off" class="layui-input">
+            <select name="qfr" lay-verify="" >
+                <option value="扎西罗布">扎西罗布</option>
+                <option value="卓木强巴]">卓木强巴</option>
+            </select>
             </div>
         </div>
         <div class="layui-col-md4" >
@@ -207,13 +212,17 @@
         <div class="layui-col-md6" >
             <label class="layui-form-label" >主送机关</label>
             <div class="layui-input-block">
-                <input type="text" name="title" required lay-verify="" placeholder="输入内容" autocomplete="off" class="layui-input">
+                <input type="text" name="zsjg" required lay-verify=""  autocomplete="off" class="layui-input">
+                <ul style="position: relative;left:105%;top: -30px" id="zsjg"></ul>
             </div>
         </div>
+    </div>
+    <div class="layui-row layui-col-space10">
         <div class="layui-col-md6" >
             <label class="layui-form-label" >抄送机关</label>
             <div class="layui-input-block">
-                <input type="text" name="title" required lay-verify="" placeholder="输入内容" autocomplete="off" class="layui-input layui-inline">
+                <input type="text" name="csjg" required lay-verify=""  autocomplete="off" class="layui-input">
+                <ul style="position: relative;left:105%;top:-30px" id="csjg"></ul>
             </div>
         </div>
     </div>
@@ -255,10 +264,11 @@
                 <input type="text" name="title" required lay-verify="" value="管理员" autocomplete="off" class="layui-input">
             </div>
         </div>
-        <div class="layui-col-md6" >
+        <div class="layui-col-md4" >
             <label class="layui-form-label" >拟稿部门</label>
             <div class="layui-input-block">
-                <input type="text" name="title" required lay-verify="" value="管理员" autocomplete="off" class="layui-input layui-inline">
+                <input type="text" name="ngbm" required lay-verify=""  autocomplete="off" class="layui-input">
+                <ul style="position: relative;left:105%;top:-30px" id="ngbm"></ul>
             </div>
         </div>
     </div>
@@ -308,13 +318,30 @@
         </div>
     </div>
     <!--附件-->
-    <div class="layui-row layui-col-space10">
-        <div class="layui-col-md2" >
+    <div class="layui-row layui-col-space5">
+        <div class="layui-col-md4" >
             <label class="layui-form-label" >附件</label>
-            <div class="layui-input-block">
+            <div class="layui-input-inline">
                 <button  type="button" class="layui-btn layui-btn-normal layui-btn-sm" id="sc">
                     <i class="layui-icon">&#xe67c;</i>上传附件
                 </button>
+            </div>
+            <div class="layui-input-inline">
+            <span style="color: red" >注意:请勿上传涉密文件</span>
+            </div>
+        </div>
+    </div>
+
+    <!--印章-->
+    <div class="layui-row layui-col-space10">
+        <div class="layui-col-md4" >
+            <label class="layui-form-label" >印章选择</label>
+            <div class="layui-input-block">
+                <select name="yz" lay-verify="" >
+                    <option value="../../images/yz/2.png">人民政府</option>
+                    <option value="../../images/yz/1.png">办公室</option>
+                    <option value="../../images/yz/yz.jpeg">其他</option>
+                </select>
             </div>
         </div>
     </div>
@@ -343,28 +370,137 @@
 <script type="text/javascript" src="../../js/main.js"></script>
 <script>
     var ffdx = ''//用于存放选择的Ffdx
-    layui.use(['laydate','upload','util','layer','form'], function(){
+    layui.use(['laydate','upload','util','layer','form','tree'], function(){
         var form = layui.form;
         var laydate = layui.laydate;
         var upload = layui.upload;
         var util = layui.util;
         var layer = layui.layer;
+        var tree=layui.tree;
         var $ = layui.jquery;
         //执行
         util.fixbar({
-            bar1: false
+            bar1:"顶"
             ,click: function(type){
                 console.log(type);
                 if(type === 'bar1'){
-                    alert('点击了bar1')
+                   console.log('点击了bar1')
                 }
+            }
+        });
+        tree({
+            elem: '#zsjg' //传入元素选择器
+            ,nodes: [{ //节点
+                name: '城关区'
+                ,children: [{
+                    name: '区直单位'
+                    ,children: [{
+                      name:  '区委办',
+                    },{
+                        name:  '人大办',
+                    },{
+                        name:  '政府办',
+                    },{
+                        name:  '政协办',
+                    },{
+                        name:  '纪检办',
+                    }]
+                },{
+                    name: '政府各部门'
+                    ,children: [{
+                        name:  '审计局',
+                    },{
+                        name:  '发改委',
+                    },{
+                        name:  '财政局',
+                    },{
+                        name:  '商务局',
+                    },{
+                        name:  '教育局',
+                    }]
+                }]
+            }],click: function(node){
+                $("input[name='zsjg']").val(node.name);
+            }
+        });
+        tree({
+            elem: '#csjg' //传入元素选择器
+            ,nodes: [{ //节点
+                name: '城关区'
+                ,children: [{
+                    name: '区直单位'
+                    ,children: [{
+                        name:  '区委办',
+                    },{
+                        name:  '人大办',
+                    },{
+                        name:  '政府办',
+                    },{
+                        name:  '政协办',
+                    },{
+                        name:  '纪检办',
+                    }]
+                },{
+                    name: '政府各部门'
+                    ,children: [{
+                        name:  '审计局',
+                    },{
+                        name:  '发改委',
+                    },{
+                        name:  '财政局',
+                    },{
+                        name:  '商务局',
+                    },{
+                        name:  '教育局',
+                    }]
+                }]
+            }]
+            ,click: function(node){
+                $("input[name='csjg']").val(node.name);
+            }
+        });
+        tree({
+            elem: '#ngbm' //传入元素选择器
+            ,nodes: [{ //节点
+                name: '城关区'
+                ,children: [{
+                    name: '区直单位'
+                    ,children: [{
+                        name:  '区委办',
+                    },{
+                        name:  '人大办',
+                    },{
+                        name:  '政府办',
+                    },{
+                        name:  '政协办',
+                    },{
+                        name:  '纪检办',
+                    }]
+                },{
+                    name: '政府各部门'
+                    ,children: [{
+                        name:  '审计局',
+                    },{
+                        name:  '发改委',
+                    },{
+                        name:  '财政局',
+                    },{
+                        name:  '商务局',
+                    },{
+                        name:  '教育局',
+                    }]
+                }]
+            }]
+            ,click: function(node){
+                $("input[name='ngbm']").val(node.name);
             }
         });
         //签发日期
         laydate.render({
             elem: '#qfrq', //指定元素
             theme:'#1E9FFF',
-            calendar: true
+            calendar: true,
+            value: new Date()
         });
         //起草日期
         laydate.render({
@@ -377,7 +513,8 @@
         laydate.render({
             elem: '#yfrq', //指定元素
             theme:'#1E9FFF',
-            calendar: true
+            calendar: true,
+            value: new Date()
         });
         //日期范围
         laydate.render({
@@ -387,7 +524,8 @@
         //文件日期
         laydate.render({
             elem: '#whrq',
-            type: 'year'
+            type: 'year',
+            value:2018
         });
         //执行实例
         var uploadInst = upload.render({
@@ -445,6 +583,7 @@
                 var mbmc=edit_param1.mbmc;
                 var title=edit_param2.gwbt;
                 var content1=edit_param2.fwdw+"&nbsp;"+edit_param2.wh+"&nbsp;号";
+                var yz=edit_param2.yz;
                 ue.setContent('<h2 style="font-size: 32px; font-weight: bold;  padding: 0px 4px 20px 0px; text-align: center; ">\n' +
                     '    <span style="color: rgb(255, 0, 0); font-family: 宋体, SimSun;">&nbsp;<strong>ल्हासा चेन्गुन जिला शुद्ध भूमि कृषि कं लिमिटेड दस्तावेज</strong></span>\n' +
                     '</h2>\n' +
@@ -458,15 +597,15 @@
                     '<p>\n' +
                     '    <br/>\n' +
                     '</p>\n'+
-                     '<h2 style="font-size: 24px;font-weight: bold;text-align:center;">'+title+'</h2>'+
+                    '<h2 style="font-size: 24px;font-weight: bold;text-align:center;">'+title+'</h2>'+
                     '<p>\n' +
                     '    <br/>\n' +
                     '</p>\n'+
                     '<p>\n' +
                     '    <br/>\n' +
                     '</p>\n'+
-                    '<h2 style=""><img  src="../../images/yz.jpeg"></img></h2>'
-                );
+                    '<p style="float: right"><img  src="'+yz+'"></img></p>'
+            );
             });
         });
 
