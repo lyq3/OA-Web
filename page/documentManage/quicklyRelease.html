@@ -346,6 +346,18 @@
         </div>
     </div>
 
+    <!--测试框-->
+    <div class="layui-row layui-col-space10">
+        <div class="layui-col-md6" >
+            <label class="layui-form-label" >主送机关</label>
+            <div class="layui-input-block">
+                <input type="text" name="zsjg" required lay-verify=""  autocomplete="off" class="layui-input">
+            </div>
+            <div class="layui-input-block" id="test">
+            </div>
+        </div>
+    </div>
+
     <button id="createEdit2" style="height: 0;width: 0" lay-submit lay-filter="createEdit2" ></button>
 </div>
 <!--公文编辑区-->
@@ -367,6 +379,7 @@
 <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
 <script type="text/javascript" src="../../layui/layui.js"></script>
+<script src="select_test.js"></script>
 <script type="text/javascript" src="../../js/main.js"></script>
 <script>
     var ffdx = ''//用于存放选择的Ffdx
@@ -495,6 +508,7 @@
                 $("input[name='ngbm']").val(node.name);
             }
         });
+
         //签发日期
         laydate.render({
             elem: '#qfrq', //指定元素

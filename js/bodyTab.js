@@ -6,7 +6,7 @@
 */
 var tabFilter,menu=[],liIndex,curNav,delMenu,
     changeRefreshStr = window.sessionStorage.getItem("changeRefresh");
-layui.define(["element","jquery"],function(exports){
+layui.define(["element","jquery","tree"],function(exports){
 	var element = layui.element,
 		$ = layui.$,
 		layId,
