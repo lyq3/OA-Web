@@ -156,7 +156,7 @@ layui.use(['form','layer','laydate','table','laytpl'],function(){
     table.on('tool(newsList)', function(obj){
         var data = obj.data;
         if(obj.event === 'newsName'){
-            layer.open({
+            var inx = layer.open({
                 type: 2,
                 title: data.newsName,
                 shadeClose: true,
@@ -165,6 +165,8 @@ layui.use(['form','layer','laydate','table','laytpl'],function(){
                 area: ['893px', '600px'],
                 content: '/page/document/showDocument.html'
             });
+
+            layer.full(inx);
         }
     });
 
