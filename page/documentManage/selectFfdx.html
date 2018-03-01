@@ -24,7 +24,8 @@
                 <a class="layui-btn search_btn" data-type="reload">搜索</a>
             </div>
             <div class="layui-inline">
-                <ul  id="bm"></ul>
+                <div id="bm">
+                </div>
             </div>
             <div class="layui-inline">
                 <a class="layui-btn layui-btn-normal addNews_btn addAll_btn">批量添加</a>
@@ -61,16 +62,21 @@
         }
     })(jQuery);
     //设置初始值
-    $("#tags").val($.getUrlParam('parm'))
+    $("#tags").val($.getUrlParam('parm'));
 
-    layui.use(['form','layer','table','laytpl','tree'],function(){
+    layui.config({
+        base : '../../js/'
+    }).extend({
+        'inputTree' : 'inputTree'
+    })
+
+    layui.use(['form','layer','table','laytpl','inputTree'],function(){
         var form = layui.form,
             layer = parent.layer === undefined ? layui.layer : top.layer,
             $ = layui.jquery,
             laytpl = layui.laytpl,
             table = layui.table;
-            tree=layui.tree;
-
+         var inputTree=layui.inputTree;
 
         //用户列表
         var tableIns = table.render({
@@ -97,63 +103,6 @@
             ]]
         });
 
-
-        tree({
-            elem: '#bm' //传入元素选择器
-            ,nodes: [{ //节点
-                name: '城关区'
-                ,children: [{
-                    name: '区直单位',
-                    id:1
-                    ,children: [{
-                        name:  '区委办',
-                        id:1
-                    },{
-                        name:  '人大办',
-                        id:1
-                    },{
-                        name:  '政府办',
-                        id:1
-                    },{
-                        name:  '政协办',
-                        id:1
-                    },{
-                        name:  '纪检办',
-                        id:1
-                    }]
-                },{
-                    name: '政府各部门',
-                    id:2
-                    ,children: [{
-                        name:  '审计局',
-                        id:2
-                    },{
-                        name:  '发改委',
-                        id:2
-                    },{
-                        name:  '财政局',
-                        id:2
-                    },{
-                        name:  '商务局',
-                        id:2
-                    },{
-                        name:  '教育局',
-                        id:2
-                    }]
-                }]
-            }],click: function(node){
-                if(node.id==1){
-                    tableIns.reload({
-                        url : '../../json/userList.json'
-                    });
-                }else {
-                    tableIns.reload({
-                        url : '../../json/userList2.json'
-                    });
-                }
-
-            }
-        });
 
         //搜索【此功能需要后台配合，所以暂时没有动态效果演示】
         $(".search_btn").on("click",function(){
@@ -262,7 +211,42 @@
 //                parent.addFfdx($("#tags").val())
             }
         });
-    })
+
+        inputTree.init([{
+                name: '城关区'
+                ,children: [{
+                    name: '区直单位'
+                    ,children: [{
+                        name:  '区委办',
+                    },{
+                        name:  '人大办',
+                    },{
+                        name:  '政府办',
+                    },{
+                        name:  '政协办',
+                    },{
+                        name:  '纪检办',
+                    }]
+                },{
+                    name: '政府各部门'
+                    ,children: [{
+                        name:  '审计局',
+                    },{
+                        name:  '发改委',
+                    },{
+                        name:  '财政局',
+                    },{
+                        name:  '商务局',
+                    },{
+                        name:  '教育局',
+                    }]
+                }]
+            }],'bm'
+        );
+    });
+
+
+
     //标签
     $(function(){
         $('#tags').tagsInput({

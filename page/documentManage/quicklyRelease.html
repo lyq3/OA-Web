@@ -211,18 +211,12 @@
     <div class="layui-row layui-col-space10">
         <div class="layui-col-md6" >
             <label class="layui-form-label" >主送机关</label>
-            <div class="layui-input-block">
-                <input type="text" name="zsjg" required lay-verify=""  autocomplete="off" class="layui-input">
-                <ul style="position: relative;left:105%;top: -30px" id="zsjg"></ul>
+            <div class="layui-input-block" id="zsjg">
             </div>
         </div>
-    </div>
-    <div class="layui-row layui-col-space10">
         <div class="layui-col-md6" >
             <label class="layui-form-label" >抄送机关</label>
-            <div class="layui-input-block">
-                <input type="text" name="csjg" required lay-verify=""  autocomplete="off" class="layui-input">
-                <ul style="position: relative;left:105%;top:-30px" id="csjg"></ul>
+            <div class="layui-input-block" id="csjg">
             </div>
         </div>
     </div>
@@ -266,9 +260,7 @@
         </div>
         <div class="layui-col-md4" >
             <label class="layui-form-label" >拟稿部门</label>
-            <div class="layui-input-block">
-                <input type="text" name="ngbm" required lay-verify=""  autocomplete="off" class="layui-input">
-                <ul style="position: relative;left:105%;top:-30px" id="ngbm"></ul>
+            <div class="layui-input-block" id="ngbm">
             </div>
         </div>
     </div>
@@ -346,17 +338,6 @@
         </div>
     </div>
 
-    <!--测试框-->
-    <div class="layui-row layui-col-space10">
-        <div class="layui-col-md6" >
-            <label class="layui-form-label" >主送机关</label>
-            <div class="layui-input-block">
-                <input type="text" name="zsjg" required lay-verify=""  autocomplete="off" class="layui-input">
-            </div>
-            <div class="layui-input-block" id="test">
-            </div>
-        </div>
-    </div>
 
     <button id="createEdit2" style="height: 0;width: 0" lay-submit lay-filter="createEdit2" ></button>
 </div>
@@ -379,11 +360,16 @@
 <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
 <script type="text/javascript" src="../../layui/layui.js"></script>
-<script src="select_test.js"></script>
 <script type="text/javascript" src="../../js/main.js"></script>
 <script>
     var ffdx = ''//用于存放选择的Ffdx
-    layui.use(['laydate','upload','util','layer','form','tree'], function(){
+    layui.config({
+        base : '../../js/'
+    }).extend({
+        'inputTree' : 'inputTree'
+    })
+
+    layui.use(['laydate','upload','util','layer','form','tree','inputTree'], function(){
         var form = layui.form;
         var laydate = layui.laydate;
         var upload = layui.upload;
@@ -391,6 +377,101 @@
         var layer = layui.layer;
         var tree=layui.tree;
         var $ = layui.jquery;
+        var inputTree= layui.inputTree;
+        inputTree.init([{ //节点
+                name: '城关区'
+                ,children: [{
+                    name: '区直单位'
+                    ,children: [{
+                        name:  '区委办',
+                    },{
+                        name:  '人大办',
+                    },{
+                        name:  '政府办',
+                    },{
+                        name:  '政协办',
+                    },{
+                        name:  '纪检办',
+                    }]
+                },{
+                    name: '政府各部门'
+                    ,children: [{
+                        name:  '审计局',
+                    },{
+                        name:  '发改委',
+                    },{
+                        name:  '财政局',
+                    },{
+                        name:  '商务局',
+                    },{
+                        name:  '教育局',
+                    }]
+                }]
+            }],'zsjg'
+        );
+        inputTree.init([{ //节点
+                name: '城关区'
+                ,children: [{
+                    name: '区直单位'
+                    ,children: [{
+                        name:  '区委办',
+                    },{
+                        name:  '人大办',
+                    },{
+                        name:  '政府办',
+                    },{
+                        name:  '政协办',
+                    },{
+                        name:  '纪检办',
+                    }]
+                },{
+                    name: '政府各部门'
+                    ,children: [{
+                        name:  '审计局',
+                    },{
+                        name:  '发改委',
+                    },{
+                        name:  '财政局',
+                    },{
+                        name:  '商务局',
+                    },{
+                        name:  '教育局',
+                    }]
+                }]
+            }],'csjg'
+        );
+
+        inputTree.init([{ //节点
+                name: '城关区'
+                ,children: [{
+                    name: '区直单位'
+                    ,children: [{
+                        name:  '区委办',
+                    },{
+                        name:  '人大办',
+                    },{
+                        name:  '政府办',
+                    },{
+                        name:  '政协办',
+                    },{
+                        name:  '纪检办',
+                    }]
+                },{
+                    name: '政府各部门'
+                    ,children: [{
+                        name:  '审计局',
+                    },{
+                        name:  '发改委',
+                    },{
+                        name:  '财政局',
+                    },{
+                        name:  '商务局',
+                    },{
+                        name:  '教育局',
+                    }]
+                }]
+            }],'ngbm'
+        );
         //执行
         util.fixbar({
             bar1:"顶"
@@ -399,113 +480,6 @@
                 if(type === 'bar1'){
                    console.log('点击了bar1')
                 }
-            }
-        });
-        tree({
-            elem: '#zsjg' //传入元素选择器
-            ,nodes: [{ //节点
-                name: '城关区'
-                ,children: [{
-                    name: '区直单位'
-                    ,children: [{
-                      name:  '区委办',
-                    },{
-                        name:  '人大办',
-                    },{
-                        name:  '政府办',
-                    },{
-                        name:  '政协办',
-                    },{
-                        name:  '纪检办',
-                    }]
-                },{
-                    name: '政府各部门'
-                    ,children: [{
-                        name:  '审计局',
-                    },{
-                        name:  '发改委',
-                    },{
-                        name:  '财政局',
-                    },{
-                        name:  '商务局',
-                    },{
-                        name:  '教育局',
-                    }]
-                }]
-            }],click: function(node){
-                $("input[name='zsjg']").val(node.name);
-            }
-        });
-        tree({
-            elem: '#csjg' //传入元素选择器
-            ,nodes: [{ //节点
-                name: '城关区'
-                ,children: [{
-                    name: '区直单位'
-                    ,children: [{
-                        name:  '区委办',
-                    },{
-                        name:  '人大办',
-                    },{
-                        name:  '政府办',
-                    },{
-                        name:  '政协办',
-                    },{
-                        name:  '纪检办',
-                    }]
-                },{
-                    name: '政府各部门'
-                    ,children: [{
-                        name:  '审计局',
-                    },{
-                        name:  '发改委',
-                    },{
-                        name:  '财政局',
-                    },{
-                        name:  '商务局',
-                    },{
-                        name:  '教育局',
-                    }]
-                }]
-            }]
-            ,click: function(node){
-                $("input[name='csjg']").val(node.name);
-            }
-        });
-        tree({
-            elem: '#ngbm' //传入元素选择器
-            ,nodes: [{ //节点
-                name: '城关区'
-                ,children: [{
-                    name: '区直单位'
-                    ,children: [{
-                        name:  '区委办',
-                    },{
-                        name:  '人大办',
-                    },{
-                        name:  '政府办',
-                    },{
-                        name:  '政协办',
-                    },{
-                        name:  '纪检办',
-                    }]
-                },{
-                    name: '政府各部门'
-                    ,children: [{
-                        name:  '审计局',
-                    },{
-                        name:  '发改委',
-                    },{
-                        name:  '财政局',
-                    },{
-                        name:  '商务局',
-                    },{
-                        name:  '教育局',
-                    }]
-                }]
-            }]
-            ,click: function(node){
-                $("input[name='ngbm']").val(node.name);
             }
         });
 
